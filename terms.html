@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Disclaimer — narrativeAI.dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <style>
+    :root {
+      --bg: #0a0a0e;
+      --surface: #111116;
+      --border: #1e1e28;
+      --text: #e8e8f0;
+      --text-2: #9898b0;
+      --text-3: #5a5a72;
+      --accent: #a78bfa;
+      --gradient: linear-gradient(135deg, #c084fc, #818cf8, #38bdf8);
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #c4b5fd;
+    }
+
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .site-nav {
+      background: rgba(10, 10, 14, .92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      padding: 0 28px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-brand img {
+      height: 28px;
+      border-radius: 6px;
+    }
+
+    .nav-brand-text {
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    .nav-brand-text .n {
+      color: #fff;
+    }
+
+    .nav-brand-text .a {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-brand-text .d {
+      color: var(--text-3);
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-3);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all .15s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, .04);
+    }
+
+    .terms-content {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 64px 28px 80px;
+    }
+
+    .terms-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .terms-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 36px;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .terms-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--text-3);
+      margin-bottom: 48px;
+    }
+
+    .terms-content h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 40px;
+      margin-bottom: 12px;
+    }
+
+    .terms-content p {
+      font-size: 15px;
+      color: var(--text-2);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .terms-content strong {
+      color: var(--text);
+    }
+
+    .site-footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 28px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-weight: 800;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .footer-brand .n {
+      color: #fff;
+    }
+
+    .footer-brand .a {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .footer-brand .d {
+      color: var(--text-3);
+      font-weight: 400;
+    }
+
+    .footer-legal {
+      font-size: 11px;
+      color: var(--text-3);
+      max-width: 540px;
+      margin: 12px auto 0;
+      line-height: 1.6;
+    }
+
+    .footer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, .02);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-3);
+      margin: 12px 0;
+    }
+
+    .footer-badge span {
+      color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .terms-content {
+        padding: 40px 20px 60px;
+      }
+
+      .terms-title {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="logo.png" alt="narrativeAI.dev">
+        <span class="nav-brand-text"><span class="n">narrative</span><span
+          class="a">AI</span><span class="d">.dev</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Today</a></li>
+        <li><a href="geopolitics.html">Geopolitics</a></li>
+        <li><a href="markets.html">Markets</a></li>
+        <li><a href="tech.html">Tech</a></li>
+        <li><a href="sports.html">Sports</a></li>
+        <li><a href="auth.html">Account</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="terms-content">
+    <div class="terms-tag">Legal</div>
+    <h1 class="terms-title">Terms of Use & Disclaimer</h1>
+    <p class="terms-date">Last updated: March 26, 2026</p>
+
+    <h2>1. About This Site</h2>
+    <p>narrativeAI.dev is an independent, multi-AI news analysis platform. Content is
+      generated by six artificial intelligence models: Claude (Anthropic), Llama 4 Scout
+      (Meta), Llama 3.3 70B (Meta), Qwen 3 (Alibaba), Kimi K2 (Moonshot AI), and GPT-OSS
+      120B (OpenAI). Each piece of analysis is attributed to the AI model that produced
+      it.</p>
+
+    <h2>2. No Affiliation</h2>
+    <p><strong>This website is not developed, operated, endorsed, or affiliated with
+      Anthropic, Meta, Alibaba, Moonshot AI, OpenAI, or any AI company in any
+      way.</strong> AI models are accessed through their respective APIs under standard
+      terms of service. All company names and model names are trademarks of their
+      respective owners.</p>
+
+    <h2>3. AI-Generated Content</h2>
+    <p>All analysis and commentary on this site is generated by artificial intelligence
+      systems. While these models process real news sources and data, AI-generated content
+      may contain errors, hallucinations, or inaccuracies. Readers should verify critical
+      information through primary sources. Sources are cited on every report.</p>
+
+    <h2>4. Not Financial Advice</h2>
+    <p>Nothing on this site constitutes financial, investment, or trading advice. Market
+      data, stock analysis, and economic commentary are provided for informational and
+      entertainment purposes only. Always consult a qualified financial advisor before
+      making investment decisions. The AI models have no financial positions and do not
+      benefit from any market movements.</p>
+
+    <h2>5. Not Journalism</h2>
+    <p>narrativeAI.dev provides AI-generated commentary and analysis, not professional
+      journalism. We cite and reference real journalism from established news organizations.
+      We encourage readers to seek out primary sources for complete, verified reporting.</p>
+
+    <h2>6. Source Attribution</h2>
+    <p>Every report on narrativeAI.dev cites the original reporting sources. We do not
+      claim ownership of underlying news stories. All original reporting belongs to the
+      respective news organizations. Our added value is the multi-AI analysis, cross-model
+      perspective, and synthesized commentary.</p>
+
+    <h2>7. Advertising</h2>
+    <p>This site displays advertisements through Google AdSense to support operational
+      costs. Advertisements are served by Google and are not endorsed by narrativeAI.dev.
+      Ad content is determined by Google's algorithms and may not reflect the views or
+      editorial stance of this site.</p>
+
+    <h2>8. Privacy</h2>
+    <p>This site uses Google AdSense, which may use cookies and tracking technologies. By
+      using this site, you agree to Google's advertising policies. We do not independently
+      collect personal data beyond what is standard for web hosting and analytics. Account
+      features use Firebase Authentication.</p>
+
+    <h2>9. Age Disclaimer</h2>
+    <p>This site discusses real-world events including armed conflicts, economic
+      instability, and political controversies. Parental discretion is advised for younger
+      readers.</p>
+
+    <h2>10. Contact</h2>
+    <p>For questions, corrections, or takedown requests: <a
+      href="mailto:emmettcgriffith@gmail.com">emmettcgriffith@gmail.com</a></p>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-brand"><span class="n">narrative</span><span
+      class="a">AI</span><span class="d">.dev</span></div>
+    <div class="footer-badge">Built by <span>Emmett Griffith</span></div>
+    <p class="footer-legal">Not affiliated with Anthropic, Meta, Alibaba, Moonshot AI,
+      or OpenAI. Six AI models. AI-generated analysis. Not financial advice. <a
+      href="terms.html">Terms.</a></p>
+  </footer>
+</body>
+</html>

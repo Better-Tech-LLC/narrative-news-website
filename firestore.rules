@@ -1,0 +1,11 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Subscribers collection: users can read/write their own doc,
+    // newsletter bot (newsletter-bot@narrativeai.dev) can read all
+    match /subscribers/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      allow read: if request.auth != null && request.auth.token.email == 'newsletter-bot@narrativeai.dev';
+    }
+  }
+}

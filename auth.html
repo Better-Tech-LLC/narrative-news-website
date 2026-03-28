@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   narrativeAI.dev &mdash; Account
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Playfair+Display:wght@700;800;900&amp;display=swap" rel="stylesheet"/>
+  <link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;⚡&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
+  <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7084818886865459">
+  </script>
+  <style>
+   * { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0c0c10; color:#f0f0f5; font-family:'Inter',system-ui,sans-serif; line-height:1.6; min-height:100vh; }
+a { color:#c4b5fd; text-decoration:none; transition:all .2s; }
+a:hover { color:#e0d5ff; }
+
+.gradient-text {
+  background:linear-gradient(135deg,#c084fc,#818cf8,#38bdf8,#22d3ee);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+
+/* Legal */
+.legal-banner {
+  background:#0e0e14; border-bottom:1px solid #1e1e2e;
+  padding:10px 20px; font-size:11px; color:#6b6b80;
+  text-align:center; font-family:'JetBrains Mono',monospace;
+}
+.legal-banner a { color:#a78bfa; }
+
+/* Nav */
+nav {
+  background:rgba(12,12,16,.88); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
+  border-bottom:1px solid #1e1e2e; padding:0 24px;
+  position:sticky; top:0; z-index:100;
+}
+.nav-inner {
+  max-width:1200px; margin:0 auto; display:flex;
+  align-items:center; justify-content:space-between; height:60px;
+}
+.nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+.nav-logo img { height:32px; width:auto; border-radius:8px; }
+.nav-logo-text { font-family:'Inter',system-ui,sans-serif; font-weight:800; font-size:18px; }
+.nav-logo-text .narrative { color:#ffffff; }
+.nav-logo-text .ai {
+  background:linear-gradient(135deg,#c084fc,#38bdf8);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.nav-logo-text .dev { color:#6b6b80; font-weight:400; }
+.nav-links { display:flex; gap:6px; list-style:none; }
+.nav-links a {
+  color:#8888a0; font-size:13px; font-weight:500; padding:6px 14px;
+  border-radius:8px; transition:all .2s; text-transform:uppercase; letter-spacing:.3px;
+  text-decoration:none;
+}
+.nav-links a:hover { color:#fff; background:rgba(255,255,255,.06); }
+.nav-links a.active {
+  color:#fff;
+  background:linear-gradient(135deg,rgba(168,85,247,.15),rgba(56,189,248,.1));
+  border:1px solid rgba(168,85,247,.25);
+}
+.nav-date { font-family:'JetBrains Mono',monospace; font-size:12px; color:#6b6b80; }
+
+/* Models dropdown */
+.models-dropdown { position:relative; }
+.models-btn {
+  background:linear-gradient(135deg,rgba(168,85,247,.15),rgba(56,189,248,.1));
+  border:1px solid rgba(168,85,247,.25); color:#d8b4fe; padding:6px 14px;
+  border-radius:8px; font-size:13px; font-weight:600; cursor:pointer;
+  font-family:'Inter',sans-serif; transition:all .2s;
+}
+.models-btn:hover { background:linear-gradient(135deg,rgba(168,85,247,.25),rgba(56,189,248,.15)); color:#fff; }
+.models-panel {
+  display:none; position:absolute; top:calc(100% + 8px); right:0;
+  background:#141418; border:1px solid rgba(255,255,255,.1); border-radius:14px;
+  padding:16px; min-width:240px; box-shadow:0 16px 48px rgba(0,0,0,.5); z-index:200;
+}
+.models-dropdown.open .models-panel { display:block; }
+.models-panel-title {
+  font-family:'JetBrains Mono',monospace; font-size:10px; color:#6b6b80;
+  text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;
+  padding-bottom:8px; border-bottom:1px solid rgba(255,255,255,.06);
+}
+.model-drop-item {
+  display:flex; align-items:center; gap:8px; padding:8px 4px;
+  font-size:13px; color:#c0c0d0; font-weight:500;
+}
+.model-drop-item .model-maker {
+  color:#6b6b80; font-size:11px; margin-left:auto; font-family:'JetBrains Mono',monospace;
+}
+
+/* Auth Hero (signed out only) */
+.auth-hero {
+  position:relative; padding:80px 24px 60px; text-align:center;
+  border-bottom:1px solid #1e1e2e; overflow:hidden;
+  background:
+    radial-gradient(ellipse at 20% -30%, rgba(168,85,247,.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% -10%, rgba(56,189,248,.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 120%, rgba(99,102,241,.06) 0%, transparent 50%);
+}
+.auth-hero-img {
+  position:absolute; top:0; left:0; width:100%; height:100%;
+  object-fit:cover; opacity:.06; pointer-events:none;
+}
+.auth-hero h1 {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(32px,5vw,56px); font-weight:900; line-height:1.15;
+  letter-spacing:-1px; margin-bottom:12px; max-width:700px;
+  margin-left:auto; margin-right:auto; color:#fff; position:relative;
+}
+.auth-hero p {
+  font-size:16px; color:#a0a0b8; max-width:500px; margin:0 auto;
+  line-height:1.6; position:relative;
+}
+
+/* Feature cards */
+.features-bar {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
+  max-width:720px; margin:40px auto 0; position:relative;
+}
+.feature-card {
+  background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06);
+  border-radius:12px; padding:20px; text-align:center; transition:all .25s;
+}
+.feature-card:hover {
+  background:rgba(255,255,255,.05); border-color:rgba(168,85,247,.2);
+  transform:translateY(-2px);
+}
+.feature-icon {
+  width:44px; height:44px; border-radius:12px; margin:0 auto 12px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:20px;
+  background:linear-gradient(135deg,rgba(168,85,247,.12),rgba(56,189,248,.08));
+  border:1px solid rgba(168,85,247,.15);
+}
+.feature-title { font-size:14px; font-weight:700; color:#fff; margin-bottom:4px; }
+.feature-desc { font-size:12px; color:#6b6b80; line-height:1.5; }
+
+/* Auth container (sign in/up) */
+.auth-container { max-width:440px; margin:48px auto; padding:0 24px; }
+
+/* Auth card wrapper */
+.auth-card {
+  background:rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.08);
+  border-radius:18px; padding:32px; position:relative; overflow:hidden;
+}
+.auth-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg,#c084fc,#818cf8,#38bdf8,#22d3ee);
+}
+
+/* Tabs */
+.auth-tabs { display:flex; gap:4px; margin-bottom:28px; }
+.auth-tab-button {
+  flex:1; padding:12px 16px; background:rgba(255,255,255,.03);
+  border:1px solid transparent; border-radius:10px;
+  color:#6b6b80; font-family:'Inter',sans-serif; font-size:14px;
+  font-weight:600; cursor:pointer; transition:all .2s;
+  text-transform:uppercase; letter-spacing:.5px;
+}
+.auth-tab-button:hover { color:#a0a0b8; background:rgba(255,255,255,.05); }
+.auth-tab-button.active {
+  color:#fff;
+  background:linear-gradient(135deg,rgba(168,85,247,.15),rgba(56,189,248,.1));
+  border-color:rgba(168,85,247,.25);
+}
+
+/* Forms */
+.auth-form { display:none; }
+.auth-form.active { display:block; animation:fadeIn .2s ease-in; }
+@keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:translateY(0); } }
+
+.form-group { margin-bottom:20px; }
+.form-label {
+  display:block; font-size:12px; font-weight:600; color:#a0a0b8;
+  margin-bottom:6px; text-transform:uppercase; letter-spacing:.5px;
+  font-family:'JetBrains Mono',monospace;
+}
+.form-input {
+  width:100%; padding:12px 14px; background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08); border-radius:10px;
+  color:#f0f0f5; font-family:'Inter',sans-serif; font-size:14px; transition:all .2s;
+}
+.form-input:focus {
+  outline:none; border-color:rgba(168,85,247,.5);
+  box-shadow:0 0 0 3px rgba(168,85,247,.1);
+  background:rgba(255,255,255,.06);
+}
+.form-input::placeholder { color:#4a4a60; }
+
+.form-button {
+  width:100%; padding:14px 16px; border:none; border-radius:10px;
+  font-family:'Inter',sans-serif; font-size:14px; font-weight:700;
+  cursor:pointer; transition:all .25s; text-transform:uppercase; letter-spacing:.5px;
+  color:#fff;
+  background:linear-gradient(135deg,#a855f7,#6366f1,#0ea5e9);
+  background-size:200% 200%; animation:gradientShift 3s ease infinite;
+}
+@keyframes gradientShift {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+.form-button:hover:not(:disabled) {
+  transform:translateY(-1px);
+  box-shadow:0 8px 24px rgba(168,85,247,.3);
+}
+.form-button:disabled { opacity:.5; cursor:not-allowed; }
+
+.form-error {
+  padding:12px 14px; background:rgba(239,68,68,.08);
+  border:1px solid rgba(248,113,113,.2); border-radius:10px;
+  color:#fca5a5; font-size:13px; margin-bottom:16px; display:none;
+}
+.form-error.show { display:block; }
+.form-success {
+  padding:12px 14px; background:rgba(34,197,94,.08);
+  border:1px solid rgba(52,211,153,.2); border-radius:10px;
+  color:#86efac; font-size:13px; margin-bottom:16px; display:none;
+}
+.form-success.show { display:block; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   ACCOUNT DASHBOARD (signed in)
+   ═══════════════════════════════════════════════════════════════════════ */
+.account-dashboard { display:none; max-width:680px; margin:0 auto; padding:0 24px 60px; }
+.account-dashboard.active { display:block; animation:fadeIn .3s ease; }
+
+/* Dashboard header */
+.dash-header {
+  padding:48px 0 40px; text-align:center;
+  border-bottom:1px solid rgba(255,255,255,.04); margin-bottom:32px;
+}
+.dash-avatar {
+  width:80px; height:80px; border-radius:50%; margin:0 auto 20px;
+  background:linear-gradient(135deg,#a855f7,#6366f1,#0ea5e9);
+  display:flex; align-items:center; justify-content:center;
+  font-size:32px; font-weight:900; color:#fff;
+  box-shadow:0 8px 32px rgba(168,85,247,.25);
+}
+.dash-greeting {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(28px,4vw,40px); font-weight:900; color:#fff; margin-bottom:6px;
+}
+.dash-email {
+  font-family:'JetBrains Mono',monospace; font-size:13px;
+  color:#6b6b80; word-break:break-all;
+}
+.dash-member-since {
+  margin-top:8px; font-size:11px; color:#4a4a60;
+  font-family:'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:1px;
+}
+
+/* Dashboard cards */
+.dash-card {
+  background:rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.08);
+  border-radius:16px; padding:28px; margin-bottom:20px;
+  position:relative; overflow:hidden; transition:all .2s;
+}
+.dash-card:hover { border-color:rgba(255,255,255,.12); }
+.dash-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,#c084fc,#818cf8,#38bdf8,#22d3ee);
+  opacity:0; transition:opacity .2s;
+}
+.dash-card:hover::before { opacity:1; }
+
+.dash-card-header {
+  display:flex; align-items:center; justify-content:space-between; margin-bottom:20px;
+}
+.dash-card-title {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:20px; font-weight:800; color:#fff;
+}
+.dash-card-badge {
+  font-family:'JetBrains Mono',monospace; font-size:10px; color:#6b6b80;
+  text-transform:uppercase; letter-spacing:1px; padding:4px 10px;
+  background:rgba(255,255,255,.04); border-radius:6px;
+}
+
+/* Stats row */
+.dash-stats {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:20px;
+}
+.dash-stat {
+  text-align:center; padding:16px 8px;
+  background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.04);
+  border-radius:12px;
+}
+.dash-stat-value {
+  font-family:'Inter',sans-serif; font-size:28px; font-weight:800;
+  background:linear-gradient(135deg,#c084fc,#38bdf8);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.dash-stat-label {
+  font-size:11px; color:#6b6b80; text-transform:uppercase; letter-spacing:.5px;
+  margin-top:4px; font-family:'JetBrains Mono',monospace;
+}
+
+/* Preference toggles in dashboard */
+.dash-pref-item {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 0; border-bottom:1px solid rgba(255,255,255,.04);
+}
+.dash-pref-item:last-child { border-bottom:none; }
+.dash-pref-info { display:flex; align-items:center; gap:14px; }
+.dash-pref-icon {
+  width:40px; height:40px; border-radius:12px;
+  display:flex; align-items:center; justify-content:center; font-size:18px;
+  background:linear-gradient(135deg,rgba(168,85,247,.1),rgba(56,189,248,.06));
+  border:1px solid rgba(168,85,247,.1); transition:all .2s;
+}
+.dash-pref-icon.on {
+  background:linear-gradient(135deg,rgba(168,85,247,.2),rgba(56,189,248,.12));
+  border-color:rgba(168,85,247,.3);
+}
+.dash-pref-label { font-size:15px; font-weight:600; color:#e0e0f0; }
+.dash-pref-desc { font-size:12px; color:#6b6b80; margin-top:2px; }
+
+.toggle-switch {
+  position:relative; width:48px; height:28px;
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+  border-radius:14px; cursor:pointer; transition:all .3s; flex-shrink:0;
+}
+.toggle-switch.active {
+  background:linear-gradient(135deg,#a855f7,#6366f1);
+  border-color:rgba(168,85,247,.5);
+}
+.toggle-switch-knob {
+  position:absolute; top:2px; left:2px; width:22px; height:22px;
+  background:#fff; border-radius:11px; transition:all .3s;
+  box-shadow:0 2px 6px rgba(0,0,0,.3);
+}
+.toggle-switch.active .toggle-switch-knob { left:22px; }
+
+/* Save indicator */
+.save-indicator {
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:'JetBrains Mono',monospace; font-size:11px;
+  padding:6px 12px; border-radius:8px; transition:all .3s;
+  opacity:0; transform:translateY(4px);
+}
+.save-indicator.saving {
+  opacity:1; transform:translateY(0);
+  color:#d8b4fe; background:rgba(168,85,247,.08);
+}
+.save-indicator.saved {
+  opacity:1; transform:translateY(0);
+  color:#86efac; background:rgba(34,197,94,.08);
+}
+.save-indicator.hidden { opacity:0; transform:translateY(4px); }
+
+/* Quick links */
+.dash-links {
+  display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:8px;
+}
+.dash-link {
+  display:flex; align-items:center; gap:10px; padding:14px 16px;
+  background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06);
+  border-radius:12px; color:#a0a0b8; font-size:13px; font-weight:500;
+  text-decoration:none; transition:all .2s;
+}
+.dash-link:hover {
+  background:rgba(255,255,255,.05); border-color:rgba(168,85,247,.2);
+  color:#fff; transform:translateY(-1px);
+}
+.dash-link-icon { font-size:18px; }
+
+/* Sign out / danger zone */
+.dash-actions {
+  display:flex; gap:12px; margin-top:8px;
+}
+.btn-signout {
+  flex:1; padding:14px 16px; background:rgba(248,113,113,.04);
+  color:#fca5a5; border:1px solid rgba(248,113,113,.12); border-radius:12px;
+  font-family:'Inter',sans-serif; font-size:13px; font-weight:600;
+  cursor:pointer; transition:all .2s; text-transform:uppercase; letter-spacing:.5px;
+  text-align:center;
+}
+.btn-signout:hover {
+  background:rgba(248,113,113,.1); border-color:rgba(248,113,113,.3); color:#fecaca;
+}
+
+/* Footer */
+footer {
+  padding:40px 24px; text-align:center; border-top:1px solid #1e1e2e;
+  margin-top:40px;
+}
+footer img { border-radius:8px; }
+footer p { font-size:13px; color:#6b6b80; line-height:1.6; }
+footer a { color:#c4b5fd; }
+.footer-brand {
+  font-family:'Inter',sans-serif; font-weight:800; font-size:16px; margin-bottom:6px;
+}
+.footer-brand .narrative { color:#fff; }
+.footer-brand .ai {
+  background:linear-gradient(135deg,#c084fc,#38bdf8);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.footer-brand .dev { color:#6b6b80; font-weight:400; }
+.footer-tagline { color:#6b6b80; font-size:13px; margin-bottom:12px; }
+.footer-powered {
+  display:inline-flex; align-items:center; gap:6px; padding:6px 14px;
+  background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06);
+  border-radius:20px; font-family:'JetBrains Mono',monospace; font-size:11px;
+  color:#6b6b80; margin-bottom:16px;
+}
+.footer-powered span { color:#c4b5fd; }
+.disclaimer {
+  font-size:11px; color:#4a4a60; max-width:600px; margin:0 auto; line-height:1.5;
+}
+
+/* Loading state */
+.page-loading {
+  display:flex; align-items:center; justify-content:center;
+  min-height:60vh; color:#4a4a60; font-size:14px;
+}
+.page-loading .spinner {
+  width:24px; height:24px; border:3px solid rgba(168,85,247,.15);
+  border-top-color:#a855f7; border-radius:50%;
+  animation:spin .6s linear infinite; margin-right:12px;
+}
+@keyframes spin { to { transform:rotate(360deg); } }
+
+@media(max-width:768px) {
+  .nav-links,.nav-date { display:none; }
+  .features-bar { grid-template-columns:1fr; max-width:320px; }
+  .auth-card { padding:24px 20px; }
+  .dash-stats { grid-template-columns:1fr; }
+  .dash-links { grid-template-columns:1fr; }
+}
+  </style>
+ </head>
+ <body>
+  <div class="legal-banner">
+   Multi-AI news analysis. Not affiliated with any AI company. Each section attributed to its author model.
+   <a href="terms.html">
+    Full terms &rarr;
+   </a>
+  </div>
+  <nav>
+   <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+     <img alt="narrativeAI.dev" src="logo.png"/>
+     <span class="nav-logo-text">
+      <span class="narrative">
+       narrative
+      </span>
+      <span class="ai">
+       AI
+      </span>
+      <span class="dev">
+       .dev
+      </span>
+     </span>
+    </a>
+    <ul class="nav-links">
+     <li>
+      <a href="index.html">
+       Today
+      </a>
+     </li>
+     <li>
+      <a href="geopolitics.html">
+       Geopolitics
+      </a>
+     </li>
+     <li>
+      <a href="markets.html">
+       Markets
+      </a>
+     </li>
+     <li>
+      <a href="tech.html">
+       Tech
+      </a>
+     </li>
+     <li>
+      <a href="sports.html">
+       Sports
+      </a>
+     </li>
+     <li>
+      <a class="active" href="auth.html">
+       Account
+      </a>
+     </li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:14px;">
+     <div class="models-dropdown">
+      <button class="models-btn" onclick="this.parentElement.classList.toggle('open')">
+       Models &dtrif;
+      </button>
+      <div class="models-panel">
+       <div class="models-panel-title">
+        Powered by 6 AI Models
+       </div>
+       <div class="model-drop-item">
+        🤖 Claude
+        <span class="model-maker">
+         Anthropic
+        </span>
+       </div>
+       <div class="model-drop-item">
+        🦙 Llama 4 Scout
+        <span class="model-maker">
+         Meta
+        </span>
+       </div>
+       <div class="model-drop-item">
+        🦙 Llama 3.3 70B
+        <span class="model-maker">
+         Meta
+        </span>
+       </div>
+       <div class="model-drop-item">
+        🌐 Qwen 3
+        <span class="model-maker">
+         Alibaba
+        </span>
+       </div>
+       <div class="model-drop-item">
+        🌙 Kimi K2
+        <span class="model-maker">
+         Moonshot AI
+        </span>
+       </div>
+       <div class="model-drop-item">
+        ⚡ GPT-OSS 120B
+        <span class="model-maker">
+         OpenAI
+        </span>
+       </div>
+      </div>
+     </div>
+     <span class="nav-date" id="nav-date">
+     </span>
+    </div>
+   </div>
+  </nav>
+  <!-- LOADING STATE -->
+  <div class="page-loading" id="page-loading">
+   <div class="spinner">
+   </div>
+   Loading...
+  </div>
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+     SIGNED OUT: Hero + Login/Signup
+     ═══════════════════════════════════════════════════════════════════════════ -->
+  <div id="signed-out-view" style="display:none;">
+   <div class="auth-hero">
+    <img alt="" class="auth-hero-img" src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1600&amp;q=80"/>
+    <h1>
+     Your
+     <span class="gradient-text">
+      Intelligence
+     </span>
+     Hub
+    </h1>
+    <p>
+     Sign in to customize your AI-powered briefings and get the stories that matter delivered to your inbox.
+    </p>
+    <div style="margin-top:16px;padding:12px 20px;background:linear-gradient(135deg,rgba(168,85,247,.12),rgba(56,189,248,.08));border:1px solid rgba(168,85,247,.25);border-radius:10px;display:inline-block;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#c4b5fd;">
+     📨 Daily newsletter launching March 27&ndash;30 &mdash; pre-sign up below!
+    </div>
+    <div class="features-bar">
+     <div class="feature-card">
+      <div class="feature-icon">
+       ⚡
+      </div>
+      <div class="feature-title">
+       Custom Briefings
+      </div>
+      <div class="feature-desc">
+       Choose which topics land in your inbox each morning
+      </div>
+     </div>
+     <div class="feature-card">
+      <div class="feature-icon">
+       🌐
+      </div>
+      <div class="feature-title">
+       Multi-AI Analysis
+      </div>
+      <div class="feature-desc">
+       Six AI models weigh in so you get the full picture
+      </div>
+     </div>
+     <div class="feature-card">
+      <div class="feature-icon">
+       🔒
+      </div>
+      <div class="feature-title">
+       Free Forever
+      </div>
+      <div class="feature-desc">
+       No paywalls, just unfiltered AI intelligence
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="auth-container">
+    <div class="auth-card">
+     <div class="auth-tabs">
+      <button class="auth-tab-button active" data-tab="signin">
+       Sign In
+      </button>
+      <button class="auth-tab-button" data-tab="signup">
+       Sign Up
+      </button>
+     </div>
+     <form class="auth-form active" id="signin-form">
+      <div class="form-error" id="signin-error">
+      </div>
+      <div class="form-success" id="signin-success">
+      </div>
+      <div class="form-group">
+       <label class="form-label">
+        Email
+       </label>
+       <input class="form-input" id="signin-email" placeholder="you@example.com" required="" type="email"/>
+      </div>
+      <div class="form-group">
+       <label class="form-label">
+        Password
+       </label>
+       <input class="form-input" id="signin-password" placeholder="Enter your password" required="" type="password"/>
+      </div>
+      <button class="form-button" id="signin-button" type="submit">
+       Sign In
+      </button>
+     </form>
+     <form class="auth-form" id="signup-form">
+      <div class="form-error" id="signup-error">
+      </div>
+      <div class="form-success" id="signup-success">
+      </div>
+      <div class="form-group">
+       <label class="form-label">
+        Email
+       </label>
+       <input class="form-input" id="signup-email" placeholder="you@example.com" required="" type="email"/>
+      </div>
+      <div class="form-group">
+       <label class="form-label">
+        Password
+       </label>
+       <input class="form-input" id="signup-password" minlength="6" placeholder="At least 6 characters" required="" type="password"/>
+      </div>
+      <div class="form-group">
+       <label class="form-label">
+        Confirm Password
+       </label>
+       <input class="form-input" id="signup-confirm" minlength="6" placeholder="Confirm your password" required="" type="password"/>
+      </div>
+      <button class="form-button" id="signup-button" type="submit">
+       Create Account
+      </button>
+     </form>
+    </div>
+   </div>
+  </div>
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+     SIGNED IN: Full Account Dashboard
+     ═══════════════════════════════════════════════════════════════════════════ -->
+  <div class="account-dashboard" id="signed-in-view">
+   <!-- Profile header -->
+   <div class="dash-header">
+    <div class="dash-avatar" id="dash-avatar">
+     N
+    </div>
+    <div class="dash-greeting">
+     Welcome back
+    </div>
+    <div class="dash-email" id="dash-email">
+    </div>
+    <div class="dash-member-since" id="dash-member-since">
+    </div>
+   </div>
+   <!-- Stats -->
+   <div class="dash-card">
+    <div class="dash-card-header">
+     <div class="dash-card-title">
+      Your Briefing
+     </div>
+     <div class="dash-card-badge">
+      Daily at 7:30 AM
+     </div>
+    </div>
+    <div class="dash-stats">
+     <div class="dash-stat">
+      <div class="dash-stat-value" id="stat-topics">
+       0
+      </div>
+      <div class="dash-stat-label">
+       Topics
+      </div>
+     </div>
+     <div class="dash-stat">
+      <div class="dash-stat-value">
+       6
+      </div>
+      <div class="dash-stat-label">
+       AI Models
+      </div>
+     </div>
+     <div class="dash-stat">
+      <div class="dash-stat-value">
+       Free
+      </div>
+      <div class="dash-stat-label">
+       Forever
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- Newsletter Preferences -->
+   <div class="dash-card">
+    <div class="dash-card-header">
+     <div class="dash-card-title">
+      Newsletter Topics
+     </div>
+     <div class="save-indicator" id="save-indicator">
+     </div>
+    </div>
+    <div style="padding:10px 16px;margin-bottom:12px;background:linear-gradient(135deg,rgba(168,85,247,.1),rgba(56,189,248,.06));border:1px solid rgba(168,85,247,.2);border-radius:8px;font-size:12px;color:#b4a0e8;">
+     📨 Newsletter launching
+     <strong>
+      March 27&ndash;30
+     </strong>
+     . Pick your topics &mdash; you're all set once we go live!
+    </div>
+    <div class="dash-pref-item">
+     <div class="dash-pref-info">
+      <div class="dash-pref-icon" id="icon-geopolitics">
+       🌎
+      </div>
+      <div>
+       <div class="dash-pref-label">
+        Geopolitics
+       </div>
+       <div class="dash-pref-desc">
+        Conflicts, diplomacy, global power shifts
+       </div>
+      </div>
+     </div>
+     <div class="toggle-switch" data-topic="geopolitics">
+      <div class="toggle-switch-knob">
+      </div>
+     </div>
+    </div>
+    <div class="dash-pref-item">
+     <div class="dash-pref-info">
+      <div class="dash-pref-icon" id="icon-markets">
+       📈
+      </div>
+      <div>
+       <div class="dash-pref-label">
+        Markets
+       </div>
+       <div class="dash-pref-desc">
+        Stocks, crypto, macro trends, Fed moves
+       </div>
+      </div>
+     </div>
+     <div class="toggle-switch" data-topic="markets">
+      <div class="toggle-switch-knob">
+      </div>
+     </div>
+    </div>
+    <div class="dash-pref-item">
+     <div class="dash-pref-info">
+      <div class="dash-pref-icon" id="icon-tech">
+       💻
+      </div>
+      <div>
+       <div class="dash-pref-label">
+        Tech
+       </div>
+       <div class="dash-pref-desc">
+        AI breakthroughs, dev tools, open source
+       </div>
+      </div>
+     </div>
+     <div class="toggle-switch" data-topic="tech">
+      <div class="toggle-switch-knob">
+      </div>
+     </div>
+    </div>
+    <div class="dash-pref-item">
+     <div class="dash-pref-info">
+      <div class="dash-pref-icon" id="icon-sports">
+       ⚽
+      </div>
+      <div>
+       <div class="dash-pref-label">
+        Sports &amp; Culture
+       </div>
+       <div class="dash-pref-desc">
+        Games, entertainment, cultural moments
+       </div>
+      </div>
+     </div>
+     <div class="toggle-switch" data-topic="sports">
+      <div class="toggle-switch-knob">
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- Quick Links -->
+   <div class="dash-card">
+    <div class="dash-card-header">
+     <div class="dash-card-title">
+      Quick Links
+     </div>
+    </div>
+    <div class="dash-links">
+     <a class="dash-link" href="index.html">
+      <span class="dash-link-icon">
+       ⚡
+      </span>
+      Today's Briefing
+     </a>
+     <a class="dash-link" href="geopolitics.html">
+      <span class="dash-link-icon">
+       🌎
+      </span>
+      Geopolitics
+     </a>
+     <a class="dash-link" href="markets.html">
+      <span class="dash-link-icon">
+       📈
+      </span>
+      Markets
+     </a>
+     <a class="dash-link" href="tech.html">
+      <span class="dash-link-icon">
+       💻
+      </span>
+      Tech
+     </a>
+     <a class="dash-link" href="sports.html">
+      <span class="dash-link-icon">
+       ⚽
+      </span>
+      Sports
+     </a>
+     <a class="dash-link" href="terms.html">
+      <span class="dash-link-icon">
+       📜
+      </span>
+      Terms
+     </a>
+    </div>
+   </div>
+   <!-- Sign Out -->
+   <div class="dash-card">
+    <div class="dash-actions">
+     <button class="btn-signout" id="signout-button">
+      Sign Out
+     </button>
+    </div>
+   </div>
+  </div>
+  <!-- FOOTER -->
+  <footer>
+   <div class="footer-brand">
+    <span class="narrative">
+     narrative
+    </span>
+    <span class="ai">
+     AI
+    </span>
+    <span class="dev">
+     .dev
+    </span>
+   </div>
+   <div class="footer-tagline">
+    Six AI models. One briefing. Every morning.
+   </div>
+   <div class="footer-powered">
+    Built by
+    <span>
+     Emmett Griffith
+    </span>
+   </div>
+   <p class="disclaimer">
+    Not affiliated with Anthropic, Meta, Alibaba, Moonshot AI, or OpenAI. AI-generated analysis. Not financial advice.
+    <a href="terms.html">
+     Terms.
+    </a>
+   </p>
+  </footer>
+  <!-- FIREBASE SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js">
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js">
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js">
+  </script>
+  <script>
+   // ── Firebase init ──────────────────────────────────────────────────────────
+  firebase.initializeApp({
+    apiKey: "AIzaSyAbmaheSkRbBv3lEoOgVSauYxLdTUksryA",
+    authDomain: "narrativenewsai.firebaseapp.com",
+    projectId: "narrativenewsai",
+    storageBucket: "narrativenewsai.firebasestorage.app",
+    messagingSenderId: "184177460868",
+    appId: "1:184177460868:web:b65cb34e3a503e454b24d1",
+    measurementId: "G-PXKBG3KMW9"
+  });
+
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  // ── Date ───────────────────────────────────────────────────────────────────
+  const now = new Date();
+  document.getElementById('nav-date').textContent = now.toLocaleDateString('en-US', {
+    month:'long', day:'numeric', year:'numeric'
+  }).toUpperCase();
+
+  // ── DOM refs ───────────────────────────────────────────────────────────────
+  const pageLoading = document.getElementById('page-loading');
+  const signedOutView = document.getElementById('signed-out-view');
+  const signedInView = document.getElementById('signed-in-view');
+  const signinForm = document.getElementById('signin-form');
+  const signupForm = document.getElementById('signup-form');
+  const signinError = document.getElementById('signin-error');
+  const signinSuccess = document.getElementById('signin-success');
+  const signupError = document.getElementById('signup-error');
+  const signupSuccess = document.getElementById('signup-success');
+  const toggleSwitches = document.querySelectorAll('.toggle-switch');
+  const saveIndicator = document.getElementById('save-indicator');
+
+  let userPreferences = { geopolitics:false, markets:false, tech:false, sports:false };
+  let saveTimeout = null;
+
+  // ── Tab switching ──────────────────────────────────────────────────────────
+  document.querySelectorAll('.auth-tab-button').forEach(button => {
+    button.addEventListener('click', () => {
+      const tab = button.getAttribute('data-tab');
+      document.querySelectorAll('.auth-tab-button').forEach(b => b.classList.remove('active'));
+      button.classList.add('active');
+      document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+      document.getElementById(tab === 'signin' ? 'signin-form' : 'signup-form').classList.add('active');
+      clearMessages();
+    });
+  });
+
+  function clearMessages() {
+    [signinError, signinSuccess, signupError, signupSuccess].forEach(el => {
+      el.classList.remove('show'); el.textContent = '';
+    });
+  }
+  function showError(el, msg) { el.textContent = msg; el.classList.add('show'); }
+  function showSuccess(el, msg) { el.textContent = msg; el.classList.add('show'); }
+
+  // ── Toggle click → auto-save with debounce ────────────────────────────────
+  toggleSwitches.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      const topic = toggle.getAttribute('data-topic');
+      userPreferences[topic] = toggle.classList.contains('active');
+
+      // Update icon style
+      const icon = document.getElementById('icon-' + topic);
+      if (icon) icon.classList.toggle('on', userPreferences[topic]);
+
+      // Update topic count
+      updateTopicCount();
+
+      // Auto-save with debounce (instant feel)
+      showSaveStatus('saving');
+      if (saveTimeout) clearTimeout(saveTimeout);
+      saveTimeout = setTimeout(() => autoSave(), 400);
+    });
+  });
+
+  function showSaveStatus(state) {
+    saveIndicator.className = 'save-indicator';
+    if (state === 'saving') {
+      saveIndicator.textContent = 'Saving...';
+      saveIndicator.classList.add('saving');
+    } else if (state === 'saved') {
+      saveIndicator.textContent = '✓ Saved';
+      saveIndicator.classList.add('saved');
+      setTimeout(() => { saveIndicator.classList.remove('saved'); saveIndicator.classList.add('hidden'); }, 2000);
+    }
+  }
+
+  async function autoSave() {
+    const user = auth.currentUser;
+    if (!user) return;
+    try {
+      await db.collection('subscribers').doc(user.uid).set(
+        { ...userPreferences, updatedAt: new Date().toISOString() },
+        { merge: true }
+      );
+      showSaveStatus('saved');
+    } catch (e) {
+      console.error('Save failed:', e);
+      saveIndicator.textContent = 'Save failed';
+      saveIndicator.className = 'save-indicator saving';
+    }
+  }
+
+  function updateTopicCount() {
+    const count = Object.values(userPreferences).filter(Boolean).length;
+    document.getElementById('stat-topics').textContent = count;
+  }
+
+  // ── Sign In ────────────────────────────────────────────────────────────────
+  signinForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); clearMessages();
+    const email = document.getElementById('signin-email').value.trim();
+    const password = document.getElementById('signin-password').value;
+    if (!email || !password) { showError(signinError, 'Please fill in all fields.'); return; }
+
+    const btn = document.getElementById('signin-button');
+    btn.disabled = true; btn.textContent = 'Signing in...';
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+    } catch (error) {
+      let msg = 'Sign in failed.';
+      if (error.code === 'auth/invalid-email') msg = 'Invalid email address.';
+      else if (error.code === 'auth/user-not-found') msg = 'No account found.';
+      else if (error.code === 'auth/wrong-password') msg = 'Incorrect password.';
+      else if (error.code === 'auth/too-many-requests') msg = 'Too many attempts. Try later.';
+      else if (error.code === 'auth/invalid-credential') msg = 'Invalid email or password.';
+      showError(signinError, msg);
+    } finally { btn.disabled = false; btn.textContent = 'Sign In'; }
+  });
+
+  // ── Sign Up ────────────────────────────────────────────────────────────────
+  signupForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); clearMessages();
+    const email = document.getElementById('signup-email').value.trim();
+    const password = document.getElementById('signup-password').value;
+    const confirm = document.getElementById('signup-confirm').value;
+    if (!email || !password || !confirm) { showError(signupError, 'Please fill in all fields.'); return; }
+    if (password !== confirm) { showError(signupError, 'Passwords do not match.'); return; }
+    if (password.length < 6) { showError(signupError, 'Password must be at least 6 characters.'); return; }
+
+    const btn = document.getElementById('signup-button');
+    btn.disabled = true; btn.textContent = 'Creating account...';
+    try {
+      const result = await auth.createUserWithEmailAndPassword(email, password);
+      await db.collection('subscribers').doc(result.user.uid).set({
+        email, createdAt: new Date().toISOString(),
+        geopolitics:false, markets:false, tech:false, sports:false
+      });
+      // Auth state change will handle the UI switch
+    } catch (error) {
+      let msg = 'Sign up failed.';
+      if (error.code === 'auth/invalid-email') msg = 'Invalid email.';
+      else if (error.code === 'auth/email-already-in-use') msg = 'Email already in use.';
+      else if (error.code === 'auth/weak-password') msg = 'Password too weak.';
+      showError(signupError, msg);
+    } finally { btn.disabled = false; btn.textContent = 'Create Account'; }
+  });
+
+  // ── Sign Out ───────────────────────────────────────────────────────────────
+  document.getElementById('signout-button').addEventListener('click', async () => {
+    try { await auth.signOut(); } catch (e) { console.error(e); }
+  });
+
+  // ── Load preferences ──────────────────────────────────────────────────────
+  async function loadUserPreferences(uid) {
+    try {
+      const doc = await db.collection('subscribers').doc(uid).get();
+      if (doc.exists) {
+        const d = doc.data();
+        userPreferences = {
+          geopolitics: d.geopolitics || false,
+          markets: d.markets || false,
+          tech: d.tech || false,
+          sports: d.sports || false
+        };
+
+        // Set member since date
+        const created = d.createdAt;
+        if (created) {
+          const date = typeof created === 'string' ? new Date(created) : created.toDate ? created.toDate() : new Date();
+          document.getElementById('dash-member-since').textContent =
+            'Member since ' + date.toLocaleDateString('en-US', { month:'long', year:'numeric' });
+        }
+      }
+      // Apply to toggles
+      toggleSwitches.forEach(t => {
+        const topic = t.getAttribute('data-topic');
+        const isOn = userPreferences[topic];
+        t.classList.toggle('active', isOn);
+        const icon = document.getElementById('icon-' + topic);
+        if (icon) icon.classList.toggle('on', isOn);
+      });
+      updateTopicCount();
+    } catch (e) { console.error('Load preferences failed:', e); }
+  }
+
+  // ── Auth state change ─────────────────────────────────────────────────────
+  auth.onAuthStateChanged(async (user) => {
+    pageLoading.style.display = 'none';
+
+    if (user) {
+      signedOutView.style.display = 'none';
+      signedInView.style.display = 'block';
+      signedInView.classList.add('active');
+
+      // Fill dashboard
+      document.getElementById('dash-email').textContent = user.email;
+      document.getElementById('dash-avatar').textContent = (user.email || 'N')[0].toUpperCase();
+
+      await loadUserPreferences(user.uid);
+    } else {
+      signedOutView.style.display = 'block';
+      signedInView.style.display = 'none';
+      signedInView.classList.remove('active');
+
+      // Reset
+      toggleSwitches.forEach(t => {
+        t.classList.remove('active');
+        const icon = document.getElementById('icon-' + t.getAttribute('data-topic'));
+        if (icon) icon.classList.remove('on');
+      });
+      userPreferences = { geopolitics:false, markets:false, tech:false, sports:false };
+    }
+  });
+  </script>
+ </body>
+</html>
+
