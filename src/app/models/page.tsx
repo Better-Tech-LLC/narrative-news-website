@@ -2,7 +2,7 @@ import Link from "next/link";
 import { PANEL } from "@/lib/models";
 import Strands from "@/components/Strands";
 
-export const metadata = { title: "The Panel — narrativeAI.dev" };
+export const metadata = { title: "The Panel — narrativeNews.dev" };
 
 export default function ModelsPage() {
   return (

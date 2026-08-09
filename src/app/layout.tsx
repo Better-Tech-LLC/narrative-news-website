@@ -32,7 +32,7 @@ const splineMono = Spline_Sans_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "narrativeAI.dev — Six models. One briefing.",
+  title: "narrativeNews.dev — Six models. One briefing.",
   description:
     "Daily news analyzed by a panel of six AI models. Every perspective attributed. Where the panel diverges is the story.",
 };

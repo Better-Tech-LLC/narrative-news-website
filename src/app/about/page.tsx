@@ -2,7 +2,7 @@ import Link from "next/link";
 import { PANEL } from "@/lib/models";
 import Strands from "@/components/Strands";
 
-export const metadata = { title: "Method — narrativeAI.dev" };
+export const metadata = { title: "Method — narrativeNews.dev" };
 
 const STEPS = [
   {

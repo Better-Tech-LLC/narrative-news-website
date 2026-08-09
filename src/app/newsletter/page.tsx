@@ -1,7 +1,7 @@
 import NewsletterForm from "@/components/NewsletterForm";
 import Strands from "@/components/Strands";
 
-export const metadata = { title: "Newsletter — narrativeAI.dev" };
+export const metadata = { title: "Newsletter — narrativeNews.dev" };
 
 export default function NewsletterPage() {
   return (

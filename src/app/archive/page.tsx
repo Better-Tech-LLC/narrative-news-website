@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ISSUES, getStory } from "@/lib/data";
 import Strands from "@/components/Strands";
 
-export const metadata = { title: "Archive — narrativeAI.dev" };
+export const metadata = { title: "Archive — narrativeNews.dev" };
 
 export default function ArchivePage() {
   return (

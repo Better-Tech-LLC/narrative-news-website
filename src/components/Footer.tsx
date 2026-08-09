@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
         </div>
         <p className="legal">
-          narrativeAI.dev is an independent publication. Not affiliated with
+          narrativeNews.dev is an independent publication. Not affiliated with
           Anthropic, Meta, Alibaba, Moonshot AI, or OpenAI. All analysis is
           AI-generated and attributed to the model that produced it. Nothing
           here is financial advice. Built by Emmett Griffith.

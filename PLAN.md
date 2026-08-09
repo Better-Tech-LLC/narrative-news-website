@@ -1,4 +1,4 @@
-# narrativeAI.dev — Road to an Award-Winning Product
+# narrativeNews.dev — Road to an Award-Winning Product
 
 Stack decision (locked 2026-08-09): **Next.js + TypeScript on Vercel, Supabase backend.**
 Firebase is retired; the old static site lives in `legacy/` until we delete it.
@@ -34,7 +34,7 @@ right).
       prefix, like BetterTech.Tech, or a dedicated project)
 - [ ] Swap `src/lib/data.ts` read-path to Supabase queries (ISR, revalidate
       on publish)
-- [ ] Deploy to Vercel; point narrativeai.dev DNS
+- [ ] Deploy to Vercel; point narrativenews.dev DNS
 - [ ] Newsletter double-opt-in + unsubscribe (Resend or Supabase SMTP)
 
 ## Phase 3 — The pipeline (the actual product)

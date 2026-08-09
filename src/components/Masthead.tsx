@@ -21,7 +21,7 @@ export default function Masthead() {
   return (
     <header className="masthead">
       <div className="page masthead-inner">
-        <Link href="/" className="wordmark" aria-label="narrativeAI.dev home">
+        <Link href="/" className="wordmark" aria-label="narrativeNews.dev home">
           <span className="wordmark-strands" aria-hidden="true">
             {PANEL.map((m, i) => (
               <i
@@ -33,7 +33,7 @@ export default function Masthead() {
               />
             ))}
           </span>
-          narrative<em style={{ fontStyle: "italic" }}>AI</em>
+          narrative<em style={{ fontStyle: "italic" }}>News</em>
           <span className="tld">.dev</span>
         </Link>
 

@@ -1,4 +1,4 @@
-# narrativeAI.dev
+# narrativeNews.dev
 
 Daily news analyzed by a panel of six AI models. Every take attributed.
 **Where the panel diverges is the story.**
