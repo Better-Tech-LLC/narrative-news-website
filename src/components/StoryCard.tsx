@@ -28,8 +28,8 @@ export default function StoryCard({
         <Image
           src={story.image}
           alt={story.imageAlt}
-          width={1600}
-          height={900}
+          width={1376}
+          height={768}
           className="story-img"
           style={{ marginBottom: 18 }}
           priority={size === "lead"}

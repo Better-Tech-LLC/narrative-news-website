@@ -1,6 +1,7 @@
 import { TICKER } from "@/lib/data";
 
 export default function Ticker() {
+  if (TICKER.length === 0) return null;
   return (
     <div className="ticker" role="complementary" aria-label="Market snapshot">
       <div className="page ticker-inner">

@@ -40,8 +40,8 @@ export default async function StoryPage({
       <Image
         src={story.image}
         alt={story.imageAlt}
-        width={1600}
-        height={900}
+        width={1376}
+        height={768}
         className="story-img"
         style={{ margin: "32px 0", maxHeight: 460, objectFit: "cover" }}
         priority

@@ -26,6 +26,63 @@ export default function NewsletterPage() {
         Free. Unsubscribe anytime. Your email is used for the briefing and
         nothing else.
       </p>
+
+      <section
+        style={{
+          marginTop: 48,
+          padding: "clamp(24px, 4vw, 40px)",
+          background: "var(--paper-2)",
+          borderRadius: 6,
+          maxWidth: 640,
+        }}
+        aria-label="Premium"
+      >
+        <span className="eyebrow">Premium — $8/month · launching soon</span>
+        <h2
+          style={{
+            fontFamily: "var(--font-display)",
+            fontWeight: 500,
+            fontSize: 26,
+            margin: "10px 0 14px",
+          }}
+        >
+          Earlier. <em>And out loud.</em>
+        </h2>
+        <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: 10 }}>
+          {[
+            "The briefing lands 30 minutes before the free edition",
+            "The spoken briefing — every story read aloud, right inside the email",
+            "The full six-take panel on every story, plus the outlier note",
+          ].map((perk) => (
+            <li
+              key={perk}
+              style={{
+                fontSize: 15,
+                color: "var(--ink-2)",
+                paddingLeft: 20,
+                position: "relative",
+              }}
+            >
+              <span
+                style={{
+                  position: "absolute",
+                  left: 0,
+                  top: 9,
+                  width: 8,
+                  height: 8,
+                  borderRadius: "50%",
+                  background: "var(--live)",
+                }}
+                aria-hidden="true"
+              />
+              {perk}
+            </li>
+          ))}
+        </ul>
+        <p className="mono" style={{ marginTop: 16, color: "var(--ink-3)" }}>
+          Sign up free above — premium opens to the list first.
+        </p>
+      </section>
     </div>
   );
 }

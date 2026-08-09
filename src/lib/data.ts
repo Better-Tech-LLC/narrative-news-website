@@ -1,12 +1,13 @@
 import type { Issue, Story, TickerItem, SectionSlug } from "./types";
+import { GENERATED } from "./generated";
 
 /**
- * Seed content — the March 26, 2026 issue, restructured for the redesign.
- * This module is the single read-path for content; swapping it for Supabase
- * queries later means reimplementing these exported functions only.
+ * Content read-path. Seed content (the March 26, 2026 issue) lives here;
+ * machine-written issues come from ./generated.ts via the daily pipeline
+ * (scripts/generate-issue.mjs). Newest issue wins the front page.
  */
 
-export const TICKER: TickerItem[] = [
+const SEED_TICKER: TickerItem[] = [
   { label: "S&P 500", value: "6,477", change: -1.74 },
   { label: "Nasdaq", value: "21,408", change: -2.38 },
   { label: "Dow", value: "45,960", change: -1.01 },
@@ -22,14 +23,14 @@ export const SECTIONS: { slug: SectionSlug; name: string; blurb: string }[] = [
   { slug: "sports", name: "Sports", blurb: "The only section where the score settles the argument." },
 ];
 
-export const STORIES: Story[] = [
+const SEED_STORIES: Story[] = [
   {
     slug: "hormuz-day-27",
     section: "geopolitics",
     headline: "Day 27: Trump Pauses Strikes, Iran Reshapes Global Shipping",
     dek: "A selective reopening of the Strait of Hormuz is sorting the world into two economic blocs — in real time.",
     image:
-      "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1600&h=900&fit=crop",
+      "/images/hormuz-day-27.png",
     imageAlt: "Aerial view of a container ship at sea",
     date: "2026-03-26",
     displayDate: "March 26, 2026",
@@ -93,7 +94,7 @@ export const STORIES: Story[] = [
     headline: "Wall Street Reels: Oil Past $106, Meta Crushed, Chips Wobble",
     dek: "The worst single day in weeks as oil fears, a landmark verdict, and an AI efficiency breakthrough converge.",
     image:
-      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1600&h=900&fit=crop",
+      "/images/wall-street-triple-threat.png",
     imageAlt: "Stock market price board",
     date: "2026-03-26",
     displayDate: "March 26, 2026",
@@ -156,7 +157,7 @@ export const STORIES: Story[] = [
     headline: "Big Tech's Immunity Ends: The Verdict, the Layoffs, the Arms Race",
     dek: "Meta and YouTube are found liable for addiction. Meta cuts 700 jobs and bets $135B on AI. The releases keep accelerating.",
     image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&h=900&fit=crop",
+      "/images/big-tech-immunity-ends.png",
     imageAlt: "Abstract neural network visualization",
     date: "2026-03-26",
     displayDate: "March 26, 2026",
@@ -220,7 +221,7 @@ export const STORIES: Story[] = [
     headline: "MLB Is Back: Fried Dominates, Misiorowski Makes History",
     dek: "Opening Day delivered everything baseball wanted — plus tonight's Knicks–Hornets clash between two top-four offenses.",
     image:
-      "https://images.unsplash.com/photo-1508344928928-7165b67de128?w=1600&h=900&fit=crop",
+      "/images/mlb-opening-day-2026.jpg",
     imageAlt: "Baseball resting on the infield grass",
     date: "2026-03-26",
     displayDate: "March 26, 2026",
@@ -279,26 +280,55 @@ export const STORIES: Story[] = [
   },
 ];
 
-export const ISSUES: Issue[] = [
+const SEED_ISSUES: Issue[] = [
   {
     date: "2026-03-26",
     displayDate: "March 26, 2026",
-    storySlugs: STORIES.map((s) => s.slug),
+    storySlugs: SEED_STORIES.map((s) => s.slug),
     summary:
       "Hormuz reshapes shipping, Wall Street's triple threat, the addiction verdicts, and Opening Day.",
   },
 ];
+
+export const STORIES: Story[] = [...GENERATED.stories, ...SEED_STORIES];
+
+export const ISSUES: Issue[] = [...GENERATED.issues, ...SEED_ISSUES].sort(
+  (a, b) => b.date.localeCompare(a.date)
+);
+
+export const CURRENT_ISSUE = ISSUES[0];
+
+function sanitizeTicker(items: TickerItem[] | null): TickerItem[] {
+  if (!items) return [];
+  return items.filter(
+    (t) => /\d/.test(t.value) && t.value.length <= 14 && Number.isFinite(t.change)
+  );
+}
+
+/**
+ * Live ticker from the newest issue only — never falls back to an older
+ * issue's numbers (stale market data is worse than none). Empty hides the bar.
+ */
+export const TICKER: TickerItem[] =
+  GENERATED.issues.length > 0 ? sanitizeTicker(GENERATED.ticker) : SEED_TICKER;
 
 export function getStory(slug: string): Story | undefined {
   return STORIES.find((s) => s.slug === slug);
 }
 
 export function getStoriesBySection(section: string): Story[] {
-  return STORIES.filter((s) => s.section === section);
+  return STORIES.filter((s) => s.section === section).sort((a, b) =>
+    b.date.localeCompare(a.date)
+  );
 }
 
 export function getSection(slug: string) {
   return SECTIONS.find((s) => s.slug === slug);
 }
 
-export const CURRENT_ISSUE = ISSUES[0];
+/** Stories belonging to the newest issue — what the front page shows. */
+export function getCurrentStories(): Story[] {
+  return CURRENT_ISSUE.storySlugs
+    .map((slug) => getStory(slug))
+    .filter((s): s is Story => Boolean(s));
+}

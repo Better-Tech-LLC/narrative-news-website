@@ -1,12 +1,14 @@
 import Link from "next/link";
-import { CURRENT_ISSUE, STORIES, SECTIONS, getStoriesBySection } from "@/lib/data";
+import { CURRENT_ISSUE, SECTIONS, getCurrentStories, getStoriesBySection } from "@/lib/data";
 import { PANEL } from "@/lib/models";
 import Strands from "@/components/Strands";
 import StoryCard from "@/components/StoryCard";
 import ModelChip from "@/components/ModelChip";
 
 export default function FrontPage() {
-  const [lead, ...rest] = [...STORIES].sort((a, b) => b.divergence - a.divergence);
+  const [lead, ...rest] = [...getCurrentStories()].sort(
+    (a, b) => b.divergence - a.divergence
+  );
 
   return (
     <div className="page">

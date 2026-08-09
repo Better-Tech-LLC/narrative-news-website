@@ -70,7 +70,16 @@ right).
 - [ ] Submit: Awwwards / CSSDA / Godly once the pipeline is live (judges need
       to see it *alive*)
 
-## Monetization (unchanged, resequenced)
+## Monetization (locked 2026-08-09)
 
-Newsletter first (free → paid tier with alerts + scorecard data), ads only if
-ever — AdSense is off the redesign; it undercuts the editorial brand.
+Freemium newsletter. **Premium: $8/mo** — (1) briefing arrives 30 minutes
+before the free edition, (2) the spoken briefing (TTS audio, one segment per
+story) linked inside the email at /listen/[date], (3) full six-take panel +
+outlier notes. Audio pipeline: `scripts/generate-audio.mjs` — Gemini TTS when
+GEMINI_API_KEY is set, else openai/gpt-audio-mini via OpenRouter (~$2/mo at
+daily volume; budget ceiling $9/mo). Send stagger lives in
+`scripts/send-newsletter.mjs` (premium batch T+0, `--free-batch` at T+30;
+needs RESEND_API_KEY + Stripe for billing — both pending).
+
+Sequence: free daily → 1k subs → sponsor slot → scorecards ship → $8 tier →
+Aley crossover funnel on Markets stories. AdSense stays off the product.
