@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { PANEL } from "@/lib/models";
 import { CURRENT_ISSUE } from "@/lib/data";
+import { supabaseBrowser } from "@/lib/supabase-browser";
 
 const NAV = [
   { href: "/", label: "Today" },
@@ -17,6 +19,17 @@ const NAV = [
 
 export default function Masthead() {
   const pathname = usePathname();
+  const [signedIn, setSignedIn] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const sb = supabaseBrowser();
+    if (!sb) { setSignedIn(false); return; }
+    sb.auth.getSession().then(({ data }) => setSignedIn(Boolean(data.session)));
+    const { data: sub } = sb.auth.onAuthStateChange((_e, session) =>
+      setSignedIn(Boolean(session))
+    );
+    return () => sub.subscription.unsubscribe();
+  }, []);
 
   return (
     <header className="masthead">
@@ -54,6 +67,14 @@ export default function Masthead() {
           <span className="live-dot" aria-hidden="true" />
           <span className="date-text">{CURRENT_ISSUE.displayDate.toUpperCase()}</span>
         </span>
+
+        <Link
+          href="/account"
+          className="mast-auth"
+          aria-current={pathname === "/account" ? "page" : undefined}
+        >
+          {signedIn ? "Account" : "Sign in"}
+        </Link>
       </div>
     </header>
   );

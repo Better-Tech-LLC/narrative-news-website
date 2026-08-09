@@ -168,6 +168,22 @@ a {
   white-space: nowrap;
 }
 
+.mast-auth {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--ink);
+  padding: 8px 14px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+
+.mast-auth:hover { opacity: 0.85; }
+
 .live-dot {
   width: 7px;
   height: 7px;

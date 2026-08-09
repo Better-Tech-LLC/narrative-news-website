@@ -1,9 +1,8 @@
 import type { Issue, Story, TickerItem } from "./types";
 
 /**
- * Machine-written issues. OVERWRITTEN by scripts/generate-issue.mjs —
- * do not edit by hand. Seed content lives in data.ts.
- * Last run: 2026-08-09 via perplexity/sonar-pro
+ * Machine-written issues. OVERWRITTEN by scripts/pull-content.mjs (prebuild)
+ * from the Supabase backend — do not edit by hand.
  */
 export const GENERATED: {
   issues: Issue[];
@@ -15,31 +14,31 @@ export const GENERATED: {
       "date": "2026-08-09",
       "displayDate": "August 9, 2026",
       "storySlugs": [
-        "senate-passes-russia-sanctions-bill",
-        "senate-russia-bill-rattles-energy-and-shipping-markets",
-        "pentagon-loosens-nuclear-guidance-ai-debate",
-        "typhoon-dolphin-disrupts-japan-sports-travel"
+        "senate-russia-sanctions-bill-advances-against-oil-buyers",
+        "wall-street-logs-late-week-risk-off-after-senate-russia-bill",
+        "pentagon-revises-nuclear-guidance-amid-ai-and-defense-competition",
+        "british-open-wing-walker-breaks-own-world-record"
       ],
-      "summary": "U.S. Senate passes sweeping Russia sanctions bill targeting oil buyers, Russia sanctions drive fresh risk in energy markets as traders gauge tariff spillovers, Pentagon weighs looser nuclear employment guidance in era of AI and great-power rivalry, Typhoon Dolphin disrupts Japan travel as weather threatens late-summer sports schedules."
+      "summary": "U.S. Senate advances sanctions bill aimed at buyers of Russian oil · Markets weigh new U.S. sanctions risk as Russia oil buyers face tariff threat · Pentagon moves to loosen nuclear employment guidance in major defense-tech shift · 97-year-old British woman breaks her own world record in wing walking"
     }
   ],
   "stories": [
     {
-      "slug": "senate-passes-russia-sanctions-bill",
+      "slug": "senate-russia-sanctions-bill-advances-against-oil-buyers",
       "section": "geopolitics",
-      "headline": "U.S. Senate passes sweeping Russia sanctions bill targeting oil buyers",
-      "dek": "The bipartisan vote sends a major sanctions package to the House and raises pressure on countries still buying Russian energy.",
-      "image": "/images/senate-passes-russia-sanctions-bill.jpg",
-      "imageAlt": "A formal U.S. Senate chamber with a large electronic vote board, printed sanctions documents on desks, and televised cam",
+      "headline": "U.S. Senate advances sanctions bill aimed at buyers of Russian oil",
+      "dek": "The bill passed the Senate 86-11 and would add secondary tariffs, escalating pressure on India and China.",
+      "image": "https://gbthuftvbbdtettsynue.supabase.co/storage/v1/object/public/media/images/2026-08-09-senate-russia-sanctions-bill-advances-against-oil-buyers.jpg",
+      "imageAlt": "A tense U.S. Senate chamber with lawmakers voting on a sanctions bill, papers and electronic vote board visible, no iden",
       "date": "2026-08-09",
       "displayDate": "August 9, 2026",
-      "crux": "Will the House and White House turn this Senate vote into enforceable secondary tariffs, or use it mainly as leverage in negotiations?",
+      "crux": "Will secondary tariffs actually change Russian oil flows, or mainly trigger retaliation from India and China?",
       "body": [
-        "The U.S. Senate passed a sweeping sanctions package against Russia on August 8, 2026, by an 86-11 margin, sending the measure to the House of Representatives for further consideration. The lopsided vote signals unusually broad bipartisan agreement on maintaining a hard line toward Moscow. The bill now enters a more uncertain legislative environment as it moves to the lower chamber.",
-        "At the heart of the package are secondary tariffs targeting buyers of Russian oil, a mechanism that would extend American economic pressure well beyond Russia's borders. Analysts and geopolitical observers have noted that the measure would effectively draw major Asian trading partners — particularly India and China — into a confrontation with Washington. The provision raises immediate questions about how the United States balances its Russia policy against relationships it has spent years carefully cultivating.",
-        "The timing of the vote adds another layer of complexity, landing as American diplomats remain engaged in active discussions with both Moscow and Beijing. Commentary surrounding the bill has flagged a potential unintended consequence: secondary tariffs could accelerate de-dollarization trends if affected buyers move to reduce their exposure to U.S. financial pressure. That dynamic gives the White House a significant incentive to treat the legislation as a negotiating instrument rather than an enforcement blueprint.",
-        "Historical precedent with secondary sanctions legislation — including the 2017 Countering America's Adversaries Through Sanctions Act — points toward selective and delayed enforcement rather than blanket application. The broad Senate majority does, however, hand the executive branch a credible threat it can deploy in backchannel diplomacy with Moscow and with Asian capitals currently purchasing Russian energy. Whether that threat is ever fully activated may depend heavily on the trajectory of ongoing diplomatic efforts.",
-        "The bill's path through the House remains the pivotal unknown. No House vote has been scheduled, and no committed count of support in the lower chamber has been reported. How the House moves — or does not move — on the measure will determine whether the Senate's strong statement translates into enforceable tariff architecture or remains leverage on the table."
+        "The U.S. Senate passed sweeping Russia sanctions legislation on August 8, 2026, with an 86-11 bipartisan vote that would impose secondary tariffs on buyers of Russian oil — a design deliberately crafted to extend pressure beyond Moscow and into the energy purchasing decisions of major global economies. The bill now heads to the House for further consideration, but the lopsided Senate margin has already sent a clear signal: American lawmakers are prepared to use economic coercion at a scale that could reshape international energy trade.",
+        "The measure's secondary tariff mechanism is where the geopolitical complexity intensifies. By penalizing purchasers of Russian crude rather than just Russian sellers, the bill directly targets India and China — the two largest absorbers of Russian oil exports since Western sanctions accelerated following the Ukraine conflict. Analysts cited in geopolitical briefings warned the approach risks converting a Russia policy into a broader trade confrontation with two of the world's largest economies, both of which have spent years constructing financial and logistical infrastructure specifically designed to weather Western pressure.",
+        "The panel of analysts assembled by narrativeNews.dev was largely skeptical that secondary tariffs would meaningfully redirect Russian oil flows. The Historian pointed to the failure of the 1980 U.S. grain embargo on the Soviet Union and the 2018 Iran sanctions cycle as evidence that large, determined economies absorb or route around pressure more often than they yield to it. The Macro Strategist added a structural note: India's discounted oil import arrangements with Russia have been locked into long-term pricing mechanisms, making them resilient to external shocks, while China may respond by accelerating yuan-denominated energy settlements — a move that would erode the dollar leverage that makes secondary sanctions work in the first place.",
+        "The Contrarian framed the Senate's strong majority not as strength but as a potential miscalculation, arguing that treating two nuclear-armed economic powers as collateral damage in a Russia containment strategy invites coordinated countermeasures that would fall hardest on U.S. exporters and allied supply chains. The Quant assigned only a 30% probability to measurable Russian oil diversion, with an expected reduction of roughly 0.5 million barrels per day — a modest figure against the backdrop of heightened diplomatic friction it would generate. The Field Reporter's assessment was the most direct: retaliation, not rerouting, is the more probable near-term outcome.",
+        "What remains genuinely unresolved is the bill's path through the House and, critically, how aggressively a future executive would enforce waivers — the pressure-release valves that have historically determined whether sanctions bite or merely signal. The policy debate surfacing around this legislation is no longer narrowly about Russian oil revenue; it has become a test of whether the United States can sustain economic coercion against Moscow without fracturing relationships with New Delhi and Beijing simultaneously. The 86-vote Senate coalition may prove durable in Washington while remaining entirely insufficient to the task it has set for itself abroad."
       ],
       "sources": [
         "AA",
@@ -48,62 +47,62 @@ export const GENERATED: {
       "takes": [
         {
           "modelId": "claude",
-          "stance": "Leverage first, enforcement only if diplomacy stalls",
-          "position": -0.3,
-          "text": "The 86-11 Senate margin gives the White House a credible threat, but the bill's simultaneous collision with India and China relationships creates executive-branch incentives to keep it as a bargaining chip rather than trigger it. Secondary tariffs hitting Indian oil buyers would strain a relationship the U.S. has spent years cultivating as a counterweight to Beijing — that tension alone gives the House and White House reason to slow-walk or carve out exemptions. Historical pattern with secondary sanctions legislation (Iran, Venezuela) skews toward selective, delayed enforcement rather than blanket application. Genuine enforcement becomes more likely only if Moscow-Washington diplomacy visibly collapses, at which point the bill's breadth becomes a feature rather than a bug."
+          "stance": "Secondary tariffs reshape flows but invite countermoves",
+          "position": 0.15,
+          "text": "Secondary tariffs have a real track record of bending purchase decisions—Iran sanctions showed that even large buyers eventually rerouted when U.S. market access was at stake—but India and China are far larger economies with more leverage to absorb or retaliate than Iran's customers were. The most likely near-term effect is a modest discount compression on Russian crude as buyers demand higher risk premiums, not an outright shutoff of flows. Beijing has strong incentive to treat this as economic coercion and coordinate a countermeasure with New Delhi, which would test whether the Senate's 86-vote coalition holds once agriculture and manufacturing lobbies register the blowback. The bill's real efficacy depends entirely on House modifications and, critically, on whether the executive enforces waivers—both of which remain genuinely uncertain."
         },
         {
           "modelId": "llama-scout",
-          "stance": "Wait for House numbers",
+          "stance": "Tariffs unlikely to change oil flows",
           "position": 0,
-          "text": "The Senate's 86-11 vote shows strong intent, but the House of Representatives still needs to act. Without a clear count or commitment from the House, it's too early to gauge enforceable secondary tariffs. The crux hinges on the House's follow-through."
+          "text": "Secondary tariffs may trigger retaliation from India and China, rather than altering Russian oil flows. The sanctions could lead to a wider trade confrontation. India's and China's economic ties with Russia make them less likely to comply."
         },
         {
           "modelId": "llama-70b",
-          "stance": "Leverage over legislation",
-          "position": 0.2,
-          "text": "Historically, Congress has used sanctions as bargaining chips, like the 2017 Countering America's Adversaries Through Sanctions Act. The broad bipartisan support and timing amid ongoing diplomacy suggest a negotiating tactic. However, the unusually strong Senate vote and current geopolitical tensions could still push for enforceable tariffs. Precedents like the 1980s Soviet pipeline sanctions, which were eventually lifted, indicate a middle path is possible."
+          "stance": "skeptical",
+          "position": -0.5,
+          "text": "History shows sanctions often invite retaliation, as with Iran in 2018 and Russia in 2014. Secondary tariffs may not significantly curb Russian oil exports, but rather provoke India and China. The 1980 US grain embargo on the Soviet Union failed to achieve its goals. Retaliation is more likely than behavioral change."
         },
         {
           "modelId": "qwen",
-          "stance": "Leverage over enforcement",
-          "position": -0.7,
-          "text": "The Senate's broad bipartisan push signals political muscle, but secondary tariffs targeting Russian oil buyers risk alienating India and China at a delicate diplomatic moment. With de-dollarization already accelerating, the White House will likely stall full enforcement to preserve backchannel leverage. The bill’s real power lies in its threat, not its implementation—expect calibrated delays in the House to maximize negotiating flexibility."
+          "stance": "Triggers retaliation over flow shifts",
+          "position": -0.6,
+          "text": "Secondary tariffs will likely provoke swift countermeasures from Beijing and New Delhi rather than reroute Russian crude. India’s discounted oil imports have already locked in long-term pricing mechanisms that insulate flows from U.S. pressure. China may respond by accelerating parallel trade settlements in yuan, further eroding dollar leverage in Asian energy markets."
         },
         {
           "modelId": "kimi",
-          "stance": "House gridlock; pure negotiating leverage",
-          "position": -0.9,
-          "text": "The 86-11 margin is cheap hawkish theater; the House, facing midterm backlash over fuel inflation and trade-war blowback, will bury this in procedural limbo. Even if it surfaces, the White House will exploit broad waiver authority to avoid rupturing the India partnership and accelerating yuan-ruble energy trades that threaten dollar hegemony. This vote constructs diplomatic leverage, not enforceable architecture."
+          "stance": "Retaliation risk outweighs flow impact",
+          "position": -0.6,
+          "text": "Secondary tariffs on Russian oil buyers will likely spark coordinated retaliation from India and China rather than reroute energy flows. Both nations have spent years building payment systems and shipping networks to circumvent Western sanctions, and neither will absorb tariffs passively. The Senate's 86-11 margin signals domestic resolve, but it masks a strategic miscalculation: treating two nuclear-armed economic powers as collateral damage in a Russia policy invites countermeasures that hurt U.S. exporters and allies first."
         },
         {
           "modelId": "gpt-oss",
-          "stance": "Likely used as negotiation leverage",
-          "position": -0.4,
-          "text": "The Senate’s strong vote will boost bargaining power, but political and trade concerns make immediate secondary tariffs unlikely; the administration will probably lean on the bill to pressure Moscow and Asian buyers before committing to full enforcement."
+          "stance": "Tariffs will prompt retaliation, not shift flows",
+          "position": -0.3,
+          "text": "Probability of measurable diversion of Russian oil ≈30%, expected reduction 0.5 Mb/d, confidence 0.78. Secondary tariffs are likely to trigger retaliation from India and China more than reroute shipments. The Senate vote shows strong political will, but market dynamics and Chinese‑Indian demand limit any flow change. Analysts expect limited impact on oil routes but heightened diplomatic friction."
         }
       ],
-      "consensus": "The panel broadly agrees that the Senate's 86-11 vote functions primarily as diplomatic leverage rather than an immediate enforcement trigger, with the collision between Russian oil sanctions and U.S. relationships with India and China giving the White House strong incentives to delay or carve out full implementation. The House's next steps are the decisive variable, and without a clear count or commitment there, the bill's practical impact remains an open question. Enforcement becomes meaningfully more likely only if Moscow-Washington diplomacy visibly collapses.",
-      "outlierModelId": "llama-70b",
-      "outlierNote": "The Historian's position stands somewhat apart by grounding the analysis in specific legislative precedents — including CAATSA and the 1980s Soviet pipeline sanctions — to argue that a middle path combining partial enforcement with diplomatic flexibility is historically plausible, rather than treating leverage and enforcement as mutually exclusive outcomes. That nuance places the position slightly closer to the enforcement end of the spectrum than most other panelists.",
-      "divergence": 0.55
+      "consensus": "The dominant view across the analyst panel holds that secondary tariffs on Russian oil buyers are more likely to provoke retaliatory countermeasures from India and China than to meaningfully redirect Russian crude flows, given both nations' entrenched trade infrastructure and economic scale. Most analysts expect heightened diplomatic friction and potential blowback on U.S. exporters to outweigh any modest reduction in Russian oil revenues. The bill's real-world impact is seen as heavily contingent on House modifications and executive enforcement discretion.",
+      "outlierModelId": "claude",
+      "outlierNote": "Claude's position stands apart by crediting secondary tariffs with a genuine, if limited, track record — citing Iran-era precedent to argue for modest flow adjustment through risk-premium compression — rather than dismissing flow impact outright. This more conditional optimism places Claude notably closer to the center than the panel majority, which converged on retaliation as the primary and near-certain outcome.",
+      "divergence": 0.38
     },
     {
-      "slug": "senate-russia-bill-rattles-energy-and-shipping-markets",
+      "slug": "wall-street-logs-late-week-risk-off-after-senate-russia-bill",
       "section": "markets",
-      "headline": "Russia sanctions drive fresh risk in energy markets as traders gauge tariff spillovers",
-      "dek": "Markets are watching whether Washington’s new sanctions push will disrupt oil flows, shipping costs, and Asia-linked trade routes.",
-      "image": "/images/senate-russia-bill-rattles-energy-and-shipping-markets.png",
-      "imageAlt": "An oil tanker passing offshore near a port with stacked containers, a commodities trading screen in the foreground, and ",
+      "headline": "Markets weigh new U.S. sanctions risk as Russia oil buyers face tariff threat",
+      "dek": "The Senate’s 86-11 Russia vote sharpened attention on energy, trade, and geopolitical risk across markets.",
+      "image": "https://gbthuftvbbdtettsynue.supabase.co/storage/v1/object/public/media/images/2026-08-09-wall-street-logs-late-week-risk-off-after-senate-russia-bill.jpg",
+      "imageAlt": "Close-up of a trading screen showing crude oil, currency pairs, and red risk indicators during an evening session, no pe",
       "date": "2026-08-09",
       "displayDate": "August 9, 2026",
-      "crux": "Do the proposed secondary tariffs materially reduce Russian oil exports, or do buyers reroute and absorb the political risk?",
+      "crux": "Do investors price this as a real disruption to oil trade and inflation, or as a negotiable bargaining chip?",
       "body": [
-        "The Senate passed a sweeping Russia sanctions package on Sunday by an 86-11 margin, marking one of the most consequential policy votes in recent memory for global commodity and currency markets. The legislation is designed to impose secondary tariffs on buyers of Russian oil, a mechanism intended to reshape trade incentives for the world's largest importers. Coverage has specifically flagged India and China as the countries most directly exposed to the new pressure campaign. The bill has not yet become law, however, as it still requires action in the House before reaching the president's desk.",
-        "The market implications extend well beyond crude oil prices. Analysts note the possibility of wider trade friction tied to sanctions enforcement, particularly if the United States moves to target Indian or Chinese financial institutions for continued purchases of Russian barrels. Sources say the proposal could complicate U.S. deal-making with both Moscow and Beijing, injecting fresh uncertainty into commodities, freight, and emerging-market assets tied to Russian energy flows. Traders are therefore likely to price both the legislative path and the implementation risk rather than treat the outcome as settled policy.",
-        "The crux debate among analysts centers on whether the secondary tariffs would materially reduce Russian oil exports or whether major buyers would simply reroute supply chains and absorb the political risk. The historical record from 2022 through 2023 is instructive: India and China absorbed Russian crude at scale despite sustained Western pressure, building out shadow-fleet infrastructure and alternative payment rails including rupee-ruble settlement mechanisms. Those workarounds complicate enforcement but do not eliminate the underlying trade incentive, particularly when Russian barrels continue to trade at a meaningful discount to Brent.",
-        "The enforcement credibility gap is widely identified as the central weakness of the legislation. Secondary tariffs derive their power from the willingness of the United States to sanction the financial institutions of sovereign third-party states — a step Washington has consistently hesitated to take given the risk of broader trade retaliation. Without a credible threat of entity-level enforcement, buyers face a calculus of modest price adjustment rather than a forced exit from Russian supply. Until the House acts and the Treasury Department publishes specific entity lists, the material constraint on Russian barrels is logistics rather than legislation.",
-        "In the near term, the 86-11 Senate vote is expected to inject a headline risk premium into oil, freight, and select emerging-market currencies without yet delivering a structural supply shock. The broader implication is a likely increase in volatility across assets tied to Russian energy flows as markets monitor the bill's path through the House and any subsequent executive action on enforcement. The scale and specificity of any Treasury guidance will be the decisive variable traders watch for in the weeks ahead."
+        "The U.S. Senate passed a sweeping Russia sanctions bill on August 8, 2026, by a vote of 86-11, a bipartisan supermajority that immediately reframed the measure as something harder to dismiss than diplomatic theater. The bill's central mechanism—secondary tariffs targeting buyers of Russian oil—puts India and China directly in the crosshairs, exposing two of the world's largest commodity-demand centers to potential balance-of-payments stress, refining margin pressure, and currency volatility. The sheer size of the margin matters: 86 votes clears the threshold for a veto override, stripping investors of the usual 'easily reversed' escape valve that has historically allowed markets to discount geopolitical posturing.",
+        "The immediate debate splitting market participants is whether to treat the legislation as a genuine supply-chain shock or as an opening move in a longer negotiating game. The bargaining-chip framing has a surface logic—secondary tariffs on Russian oil buyers have been threatened in various forms since 2022, and follow-through has been uneven. But the 86-11 math complicates that read. Bipartisan depth of this magnitude signals durable legislative intent that survives a single administration's appetite for enforcement, and it raises the probability that crude and freight markets begin pricing partial disruption within two trading sessions rather than waiting for executive implementation guidance.",
+        "The most concrete transmission channels run through energy and emerging-market currency markets. If India and China cannot quietly reroute Russian crude exposure without visible cost, refining margins tighten, freight rates on alternative supply routes climb, and the INR and CNY face incremental inflation pass-through. Neither country gains from a rapid escalation of a trade war with Washington, which tempers the most severe retaliation scenarios in the near term. Still, Beijing retains meaningful leverage instruments—rare earth export controls and signaling around Treasury holdings—that could redeploy fast enough to reframe the bill as mutually destructive and temporarily restore the bargaining-chip narrative.",
+        "Historical analogies offer a cautionary note against full-conviction disruption pricing. The 1973 oil embargo and the 2014 Russia sanctions both showed that legislative and executive intent rarely maps cleanly onto realized supply-chain outcomes; affected parties adapt, workarounds emerge, and enforcement gaps accumulate. Base rates suggest that even credible sanctions packages deliver a fraction of their theoretical impact, which argues for a modest rather than maximal disruption premium in crude and currency markets. The question is whether the secondary-tariff architecture—designed specifically to close the workaround corridors that diluted earlier Russia sanctions—has been engineered tightly enough to break that historical pattern.",
+        "For investors, the next several sessions function as a reveal mechanism. Crude spot, INR/USD, CNY/USD, and tanker freight rates will each provide independent reads on whether the market is treating the 86-11 vote as a durable supply constraint or as a negotiable opening bid. The bill does not resolve into a single clean outcome: it raises the probability of energy inflation repricing, it introduces retaliatory trade risk from two major economies, and it compresses the window in which 'wait and see' remains a viable portfolio posture. The cost of being wrong on the bargaining-chip thesis is asymmetrically larger than the cost of being wrong on the disruption thesis, which itself may be the most important signal for how institutional positioning shifts in the days ahead."
       ],
       "sources": [
         "AA",
@@ -112,174 +111,179 @@ export const GENERATED: {
       "takes": [
         {
           "modelId": "claude",
-          "stance": "Rerouting likely dominates; reduction modest and slow",
-          "position": -0.35,
-          "text": "History from 2022–2023 showed India and China absorbed Russian crude at scale despite Western pressure, building shadow-fleet infrastructure and rupee-ruble settlement workarounds that secondary tariffs complicate but don't eliminate. The bill's leverage depends entirely on whether the U.S. is willing to sanction Indian and Chinese financial institutions—a step that risks broader trade retaliation Washington has consistently hesitated to take. That enforcement credibility gap is the crux: without it, buyers accept a modest price discount adjustment rather than exit Russian barrels. I'd assign meaningful probability to a rerouting-dominant outcome, though a tighter enforcement mechanism than prior rounds would shift that calculus."
+          "stance": "Bargaining chip narrative fades fast under 86-11 math",
+          "position": 0.65,
+          "text": "An 86-11 Senate margin removes the 'easily reversed' escape valve investors typically use to discount geopolitical posturing—this bill has enough bipartisan depth to survive a veto override attempt, which changes the probability calculus materially. India and China cannot quietly absorb secondary tariff exposure without visible balance-of-payments and refining-margin consequences, so the 'symbolic leverage' framing requires ignoring concrete downstream mechanics. The more likely path: crude and freight markets begin pricing partial disruption within two sessions, while FX stress in INR and CNY amplifies the inflation read-through. The genuine wildcard is whether Beijing's retaliatory toolkit—rare earths, Treasury holdings signaling—gets deployed fast enough to reframe the bill as mutually destructive, which is the only credible path back to 'bargaining chip' pricing."
         },
         {
           "modelId": "llama-scout",
-          "stance": "Tariffs will find a way",
-          "position": 0.2,
-          "text": "The proposed secondary tariffs may dent Russian oil exports but likely won't eliminate them. India and China, major buyers, may absorb costs or find workarounds. Market uncertainty will persist until implementation and enforcement are clear."
+          "stance": "Neutral",
+          "position": 0,
+          "text": "The Senate's 86-11 vote on Russia sanctions signals legislative momentum. Investors will assess if the measure is a genuine supply-chain shock or symbolic leverage. The bill's impact on India and China, major commodity-demand centers, is a key concern. Market volatility in crude, refining margins, freight, and currencies is likely."
         },
         {
           "modelId": "llama-70b",
-          "stance": "Rerouting likely prevails",
-          "position": -0.8,
-          "text": "Historical sanctions regimes often fail to curb trade flows, as buyers find ways to reroute and absorb political risk. The 2019 US sanctions on Iranian oil, for example, did not significantly reduce exports. Similarly, Russian oil buyers, particularly India and China, may exploit loopholes or negotiate alternative arrangements, limiting the impact of secondary tariffs. This outcome is consistent with past experiences, where sanctions have largely failed to achieve their intended goals."
+          "stance": "Cautious",
+          "position": 0.2,
+          "text": "Historical sanctions rarely achieve intended goals, often sparking retaliation. The 1973 oil embargo and 2014 Russian sanctions serve as examples. Investors may price in modest disruption, but full impact remains uncertain. Base rates suggest limited effectiveness."
         },
         {
           "modelId": "qwen",
-          "stance": "Buyers absorb risk, exports adapt",
-          "position": -0.7,
-          "text": "Indian and Chinese refiners will reroute Russian crude through third countries and use alternative payment channels to bypass secondary tariffs. The economic incentive to secure discounted oil outweighs compliance risks, as seen during prior sanction cycles. Moscow will shift logistics to shadow fleets and non-Western insurers, limiting export disruption. Price volatility will rise, but flows persist."
+          "stance": "Real disruption, not bluff",
+          "position": 0.7,
+          "text": "The 86-11 Senate vote signals strong political will, making secondary tariffs on Russian oil a credible supply-chain shock. Markets will price in constrained crude flows, especially to India and China, lifting refining margins and freight rates. This isn’t leverage—it’s a catalyst for energy inflation and retaliatory trade risks."
         },
         {
           "modelId": "kimi",
-          "stance": "Rerouting neutralizes export impact",
+          "stance": "Bargaining chip, not disruption",
           "position": -0.7,
-          "text": "Secondary tariffs on Russian oil buyers rarely bite because enforcement depends on voluntary compliance by sovereign states with no stake in U.S. sanctions architecture. India and China have already built shadow fleets, non-dollar settlement rails, and blended-origin cargo schemes that make provenance tracing a forensic nightmare. The 86-11 Senate margin signals political theater, not market discipline—traders should price the headline risk premium, not a structural supply shock. Until the House acts and Treasury publishes specific entity lists, the material constraint on Russian barrels is logistics, not legislation."
+          "text": "The 86-11 margin signals bipartisan theater, not enforcement resolve. Secondary tariffs on Russian oil buyers have been threatened since 2022 with minimal follow-through; markets have learned to discount sanctions theater ahead of election cycles. India and China will absorb marginal cost increases rather than reshape supply chains, and retaliatory risks are overstated—neither country gains from accelerating a trade war with a U.S. administration that may turn over in 2028. Investors should fade the energy volatility spike."
         },
         {
           "modelId": "gpt-oss",
-          "stance": "Tariffs will curb Russian oil flows",
-          "position": 0.6,
-          "text": "Probability of a material export reduction is 62%, implying a 5.8% cut in Russian crude shipments to India and China. Expected Brent price impact is +$3.2 per barrel, giving an expected value of +$1.9 per barrel for traders. Confidence is 0.71."
+          "stance": "Treat as real supply disruption",
+          "position": -0.71,
+          "text": "The Senate’s 86‑11 vote creates a credible secondary‑tariff framework that will restrict Russian crude shipments to India and China. Reduced supply is likely to lift spot crude, tighten refining spreads and reinforce inflation pressures, outweighing any short‑term bargaining‑chip perception."
         }
       ],
-      "consensus": "The panel lands firmly on the view that rerouting and absorption will dominate over any material reduction in Russian oil exports, citing the established shadow-fleet infrastructure, alternative payment channels, and the persistent U.S. hesitation to sanction Indian or Chinese financial institutions. The enforcement credibility gap — not the Senate vote margin — is identified as the decisive variable, with most analysts expecting price volatility and headline risk premiums rather than a structural supply shock.",
+      "consensus": "The panel broadly agrees that the 86-11 Senate margin raises the credibility of secondary tariffs above typical geopolitical posturing, creating a meaningful probability of crude, freight, and emerging-market currency volatility in the near term. Most analysts see India and China's commodity exposure as a concrete transmission channel that cannot be entirely dismissed as symbolic leverage. The primary area of disagreement is on the magnitude and durability of disruption, with historical base rates and enforcement uncertainty leaving room for a partial or negotiated outcome.",
       "outlierModelId": "gpt-oss",
-      "outlierNote": "GPT-OSS 120B stands apart as the only panelist assigning a majority probability to a material export reduction, modeling a 5.8% cut in Russian crude shipments to India and China and a nearly $2-per-barrel expected Brent impact — a quantitatively bullish crude call that sits well outside the rerouting-dominant consensus held by every other contributor.",
-      "divergence": 0.7
+      "outlierNote": "GPT-OSS 120B occupies a notable position by registering a strong disruption stance (-0.71 on a scale where negative values align with real shock pricing) while its directional conclusion—that secondary tariffs will credibly restrict Russian crude flows and lift spot prices—actually mirrors the macro consensus rather than contradicting it, suggesting a possible scoring inversion in how its position was encoded relative to its stated argument.",
+      "divergence": 0.71
     },
     {
-      "slug": "pentagon-loosens-nuclear-guidance-ai-debate",
+      "slug": "pentagon-revises-nuclear-guidance-amid-ai-and-defense-competition",
       "section": "tech",
-      "headline": "Pentagon weighs looser nuclear employment guidance in era of AI and great-power rivalry",
-      "dek": "A reported review of U.S. nuclear guidance has reignited debate over command, control, and decision speed in a more contested deterrence environment.",
-      "image": "/images/pentagon-loosens-nuclear-guidance-ai-debate.jpg",
-      "imageAlt": "A dimly lit military command room with abstract digital targeting displays, secure phones, and red status lights, viewed",
+      "headline": "Pentagon moves to loosen nuclear employment guidance in major defense-tech shift",
+      "dek": "A review under Colby signals a possible expansion of nuclear-use options amid great-power competition.",
+      "image": "https://gbthuftvbbdtettsynue.supabase.co/storage/v1/object/public/media/images/2026-08-09-pentagon-revises-nuclear-guidance-amid-ai-and-defense-competition.jpg",
+      "imageAlt": "A secure defense command center with analysts studying strategic planning screens, maps, and classified binders, no iden",
       "date": "2026-08-09",
       "displayDate": "August 9, 2026",
-      "crux": "Can nuclear deterrence remain credible and controllable as AI shortens the time available for human decision-making?",
+      "crux": "Is this a prudent modernization of deterrence guidance, or a destabilizing expansion of launch options?",
       "body": [
-        "The Pentagon is moving to loosen nuclear employment guidance under Defense official Elbridge Colby, according to a briefing published August 8, a development that analysts say could reshape military planning, alliance reassurance, and crisis stability at a moment when artificial intelligence is already compressing the timelines available for human decision-making. The reported change has not been confirmed through formal policy text, and coverage should be treated as a stated policy review rather than a finalized doctrinal overhaul. Even so, the directional shift is consequential: nuclear guidance, however incremental its revision, carries downstream effects for extended deterrence commitments to allies and for the threshold calculations adversaries make in a crisis.",
-        "The review is framed within a broader deterrence debate shaped by simultaneous competition with Russia and China, with particular urgency focused on whether current 'latent' deterrence postures remain sufficient for extended deterrence obligations. A separate briefing ties AI-enabled strike planning directly to faster escalation timelines in a Taiwan contingency, raising the question of whether technology is outpacing the institutional safeguards designed to prevent accidental or unauthorized use. The central concern threading both documents is whether artificial intelligence makes meaningful human control harder to preserve precisely under the crisis conditions where that control matters most.",
-        "Panel analysts note a structural asymmetry at the heart of the problem: deterrence signaling can remain credible because resolve is communicated before a crisis begins, but human control degrades during the compressed windows a conflict scenario would actually generate. Historical precedents — including the 1983 Able Archer exercise, the Stanislav Petrov false-alarm incident of the same year, and the 1999 Norwegian rocket episode — demonstrate both that human judgment has prevented escalation and that such judgment operated under severe time pressure even without algorithmic targeting cycles. Those cases predate sub-minute AI cueing, which analysts argue represents a qualitative rather than merely quantitative change in the decision environment.",
-        "The intersection of looser employment guidance and AI-driven targeting has drawn particular scrutiny because lower thresholds combined with faster machine-generated strike options could narrow the gap between authorized and accidental escalation. Without formal policy text, the severity of any threshold shift remains inferential, but analysts warn that procedural drift — rather than explicit pre-delegation — may be the more likely pathway by which human control erodes. Alliance partners with extended deterrence guarantees are watching the review closely, since threshold ambiguity in U.S. nuclear guidance directly affects the credibility of commitments made to partners in the Indo-Pacific and Europe.",
-        "No confirmed doctrinal change has emerged as of the August 8 briefing, and officials have not publicly specified what modifications to employment guidance are under consideration. The story nonetheless carries weight because the convergence of a guidance review with AI-accelerated targeting represents a policy inflection point whose implications extend well beyond any single contingency. How the Pentagon resolves the tension between deterrence credibility and decision-cycle control is likely to define the next generation of nuclear posture debates among both allies and adversaries."
+        "The Pentagon is moving to loosen nuclear employment guidance under Defense Secretary Pete Hegseth's policy director Elbridge Colby, according to reporting from August 9, 2026. The review represents a significant shift in how the United States frames the conditions under which nuclear weapons might be used, expanding the menu of available options rather than narrowing them. Officials framing the effort point to a multipolar strategic environment in which simultaneous competition with both Russia and China has strained legacy deterrence frameworks built largely around single-adversary scenarios.",
+        "The debate over the review sits at the intersection of defense doctrine, command-and-control architecture, and the advanced strategic infrastructure that underpins extended deterrence commitments to allies in Europe and the Indo-Pacific. Extended deterrence guarantees to partners like South Korea and Japan have come under renewed pressure as both Beijing and Moscow have modernized their own nuclear arsenals and delivery systems. Proponents of the guidance change argue that a broader set of credible employment options is necessary precisely because adversaries have complicated the escalation calculus in ways the existing framework did not anticipate.",
+        "A near-consensus among the analysts surveyed, however, treats the expansion of launch options as more likely to destabilize the strategic environment than to reinforce it. The historical analogy most frequently invoked is the 1970s NUWEP revision cycle and Presidential Directive 59, both of which expanded limited nuclear options and were followed by significant Soviet counter-posturing rather than restraint. The 2002 Nuclear Posture Review offers a more recent parallel, with its explicit expansion of contingency targets drawing sharp international criticism and contributing to accelerated proliferation pressure.",
+        "The core technical and doctrinal concern is threshold compression. When multiple nuclear-armed states must simultaneously model a lower American use threshold, their own alert postures and launch authorities tend to respond in kind, producing a compounding instability that no single power can unilaterally walk back. Analysts note that the current framing of the Pentagon review does not yet confirm whether it is paired with enhanced command-and-control safeguards, allied consultation mechanisms, or reciprocal diplomatic signaling—factors that would bear heavily on whether the doctrinal change functions as genuine modernization or as destabilizing drift.",
+        "Whether the review ultimately constitutes a prudent adjustment to a changed multipolar reality or a dangerous erosion of the strategic predictability that has kept nuclear weapons unused since 1945 remains the defining question. What the reporting confirms is that senior defense planners are treating strategic doctrine and advanced systems infrastructure as inseparable, reconsidering both simultaneously rather than in sequence. The urgency of that reconsideration, analysts agree, is real—even as sharp disagreement persists over whether the direction being taken reduces risk or compounds it."
       ],
       "sources": [
-        "Geopolitical Daily",
-        "Azimuth Report"
+        "Geopolitical Daily"
       ],
       "takes": [
         {
           "modelId": "claude",
-          "stance": "Credibility survives; controllability faces structural erosion",
-          "position": -0.4,
-          "text": "AI-compressed decision cycles create an asymmetry: deterrence signaling can still be credible because resolve is communicated before crisis onset, but meaningful human control degrades precisely when it matters most—during the minutes-long windows a Taiwan contingency would generate. The Pentagon's reported guidance loosening compounds this, because lower employment thresholds plus faster AI-cueing shrinks the gap between authorized and accidental escalation. The honest uncertainty here is whether 'human in the loop' becomes a procedural fiction rather than a genuine brake—there's no confirmed policy text, so the severity of the shift is still inferential. Historical precedent (DEFCON transitions, Able Archer 83) suggests institutional friction can preserve control under pressure, but those cases predate sub-minute AI targeting cycles."
+          "stance": "Expansion of options likely destabilizes more than it deters",
+          "position": -0.55,
+          "text": "Loosening employment guidance in a multipolar environment carries a compounding risk: when multiple adversaries must simultaneously model lower thresholds, their own postures tend to harden rather than soften. The historical record on limited nuclear options—from 1970s NUWEP revisions through PD-59—suggests that expanding the menu of use cases correlates with adversary counter-posturing, not restraint. That said, if extended deterrence commitments to Seoul or Tokyo are genuinely fraying, some doctrinal adjustment may be unavoidable rather than merely provocative. The prudence of this specific review hinges on whether it is paired with credible command-and-control safeguards and allied consultations, which the current framing does not yet confirm."
         },
         {
           "modelId": "llama-scout",
-          "stance": "numbers dont support control yet",
-          "position": -0.6,
-          "text": "The numbers aren't in. No formal policy text was provided. The Pentagon's move to loosen nuclear employment guidance raises concerns about preserving human control under crisis conditions with AI-driven targeting."
+          "stance": "cautiously critical",
+          "position": -0.5,
+          "text": "The loosening of nuclear employment guidance raises concerns about destabilization and escalation. Expanding options for nuclear use may undermine deterrence and increase the risk of miscalculation. A prudent approach would prioritize restraint and de-escalation."
         },
         {
           "modelId": "llama-70b",
-          "stance": "Doubtful on control",
-          "position": -0.8,
-          "text": "Historical analogs like the Cuban Missile Crisis show how quickly escalation can occur, and introducing AI may accelerate this process. The 1983 Stanislav Petrov incident, where a false alarm was correctly identified as such, highlights the importance of human judgment in preventing nuclear war. As AI shortens decision timelines, the risk of error increases, making control more difficult. This dynamic is reminiscent of the 1999 Norwegian rocket incident, where a scientific rocket was mistaken for a US Trident missile, demonstrating the potential for rapid escalation."
+          "stance": "cautious",
+          "position": -0.5,
+          "text": "Echoes 2002 Nuclear Posture Review's expansion. Risks destabilization, as with NATO's 1980s modernization. Historical base rates suggest caution."
         },
         {
           "modelId": "qwen",
-          "stance": "Control erodes under AI pressure",
-          "position": -0.8,
-          "text": "AI-driven targeting compresses decision windows to minutes, undermining human oversight in nuclear command. Latent deterrence falters when algorithms auto-generate strike options during crises. The Pentagon’s Colby-guided review risks normalizing pre-delegation through procedural drift. In the Taiwan scenario, speed favors machines—control becomes an afterthought."
+          "stance": "Expands nuclear response options",
+          "position": -0.6,
+          "text": "Loosening employment guidance increases strategic flexibility but lowers nuclear threshold. In multipolar competition with China and Russia, this risks crisis instability despite technological safeguards. Expanded options undermine extended deterrence credibility by appearing more escalatory than defensive."
         },
         {
           "modelId": "kimi",
-          "stance": "AI compression aids credible deterrence",
-          "position": 0.7,
-          "text": "The premise assumes slower equals safer, but Cold War crises show humans also erred under time pressure. AI compression can force earlier, more deliberate pre-crisis signaling rather than rushed launch decisions. The real instability risk isn't speed itself—it's ambiguous thresholds, which guidance updates can clarify. Treating 'human control' as synonymous with 'stable control' ignores documented human failure modes in nuclear history."
+          "stance": "Dangerous doctrine dilution",
+          "position": -0.9,
+          "text": "Expanding nuclear use options doesn't modernize deterrence—it erodes the taboo that has prevented atomic exchange since 1945. More launch scenarios mean more opportunities for miscalculation, not more credible threats. The technology here isn't the problem; it's the doctrine treating nukes as just another escalation rung."
         },
         {
           "modelId": "gpt-oss",
-          "stance": "AI undermines credible nuclear deterrence",
+          "stance": "Destabilizing expansion of launch options",
           "position": -0.85,
-          "text": "AI‑driven targeting compresses decision cycles, raising accidental‑launch risk to roughly 30% in crisis spikes. The Pentagon’s draft loosening of nuclear employment guidance adds about 15% probability of lower‑threshold use, eroding alliance reassurance. Without robust human‑in‑the‑loop safeguards, deterrence credibility will likely decline."
+          "text": "Expanding nuclear employment guidance lowers the decision threshold and heightens the risk of accidental or miscalculated use. While proponents cite flexibility against Russia and China, the move undermines the predictability that underpins strategic stability. In a multipolar world, such doctrinal drift is more likely to provoke arms‑race dynamics than to assure deterrence."
         }
       ],
-      "consensus": "The panel broadly agrees that AI-compressed decision cycles place meaningful human control under structural pressure, with the Taiwan contingency cited as the sharpest test case. The weight of historical analysis and quantitative risk assessment converges on the view that loosening employment guidance while AI shortens timelines compounds escalation risk, and that 'human in the loop' risks becoming procedural rather than substantive without explicit safeguards.",
+      "consensus": "Analysts across the panel converge on the view that loosening nuclear employment guidance in a multipolar environment is more likely to harden adversary postures and compress decision thresholds than to strengthen deterrence. The weight of historical precedent, from PD-59 to the 2002 NPR, supports caution, and the absence of confirmed command-and-control safeguards or allied consultation in the current framing amplifies those concerns. There is marginal acknowledgment that some doctrinal adjustment may be unavoidable if extended deterrence commitments to key allies are genuinely fraying, but that acknowledgment does not offset the broadly critical consensus.",
       "outlierModelId": "kimi",
-      "outlierNote": "The contrarian take stands apart by challenging the foundational assumption that slower decision-making is inherently safer, arguing instead that AI compression could force more deliberate pre-crisis signaling and that documented human failure modes in nuclear history complicate any straightforward equation of human control with stable control. This position finds limited support elsewhere on the panel, where the consensus weight of historical incidents is read as evidence for caution rather than as an argument against preserving human oversight.",
-      "divergence": 0.77
+      "outlierNote": "Kimi K2 stands apart from the other panelists not in direction but in intensity, assigning the review a position of -0.9 and framing it explicitly as an erosion of the nuclear taboo rather than a mere doctrinal miscalculation. Where other analysts focus on strategic instability and arms-race dynamics, Kimi K2 centers the normative architecture that has prevented nuclear use since 1945, arguing that treating additional launch scenarios as rungs on an escalation ladder is categorically dangerous in a way that transcends the technical or operational debate.",
+      "divergence": 0.2
     },
     {
-      "slug": "typhoon-dolphin-disrupts-japan-sports-travel",
+      "slug": "british-open-wing-walker-breaks-own-world-record",
       "section": "sports",
-      "headline": "Typhoon Dolphin disrupts Japan travel as weather threatens late-summer sports schedules",
-      "dek": "The storm’s impact on flights, power, and transport creates immediate consequences for events and team movement in Japan.",
-      "image": "/images/typhoon-dolphin-disrupts-japan-sports-travel.png",
-      "imageAlt": "A rain-lashed coastal stadium parking lot with windblown debris, grounded team buses, and dark clouds over the stands; n",
+      "headline": "97-year-old British woman breaks her own world record in wing walking",
+      "dek": "A Guinness-recognized stunt in Gloucestershire became the most concrete sports-business-adjacent result in the supplied set.",
+      "image": "https://gbthuftvbbdtettsynue.supabase.co/storage/v1/object/public/media/images/2026-08-09-british-open-wing-walker-breaks-own-world-record.png",
+      "imageAlt": "An open-air biplane with a stunt performer standing on the upper wing over green countryside, vintage aviation gear, no ",
       "date": "2026-08-09",
       "displayDate": "August 9, 2026",
-      "crux": "How many sporting events or travel plans will be forced to change if the storm track worsens overnight?",
+      "crux": "Does a record based on stunt longevity count as a sports achievement, or as a pure spectacle record?",
       "body": [
-        "Typhoon Dolphin made landfall across Japan's southern Okinawa prefecture on August 8, injuring six people, knocking out power to more than 50,000 buildings, and forcing widespread flight cancellations across the island chain. The storm's rapid movement through the Ryukyu Islands left infrastructure operators scrambling to assess damage and restore services. Authorities in both Japan and China moved quickly to limit exposure, with Chinese officials shutting ports and suspending transport services along the east coast ahead of the storm's expected arrival.",
-        "The disruption carries particular significance for Okinawa's role as a regional hub for training camps and competitions, where reliable air and ground transport is a prerequisite for normal operations. Flight cancellations of the scale already reported can cascade into athlete no-shows, delayed equipment shipments, and venue staffing shortfalls even before any single event is formally suspended. The 50,000-building power outage signals a level of infrastructure stress that venue operators and event organizers cannot responsibly set aside.",
-        "As of the latest available reporting, no specific matches or tournaments have been confirmed as cancelled or postponed as a direct result of Typhoon Dolphin. The situation remains active and developing, meaning downstream impacts on scheduled competitions may not yet be fully visible in official announcements. Historical precedent from storms of comparable scale — including Typhoon Hagibis in 2019, which forced the cancellation of multiple Rugby World Cup matches — suggests that formal schedule changes often lag the initial weather event by 24 to 48 hours.",
-        "China's port and transport closures introduce a second axis of exposure for any competitions or training movements scheduled for coastal venues later in the week. Athletes or equipment already in transit along affected sea and air corridors could face significant delays regardless of whether Okinawa itself sustains further damage overnight. The convergence of Japanese and Chinese disruptions means the logistical footprint of this storm extends well beyond the immediate landfall zone.",
-        "Meteorologists and event organizers are closely monitoring the typhoon's overnight track, as a northward or eastward shift could bring additional coastal venues into the disruption corridor. Typhoons passing through the Ryukyus have historically cleared the region within 24 to 48 hours, which would limit the total window for sports-related delays if the current track holds. Authorities have not yet issued updated guidance specific to scheduled public events, but the combination of active weather, power outages, and transport shutdowns creates the conditions under which schedule adjustments typically become unavoidable."
+        "A 97-year-old British woman rewrote her own chapter in aviation history on August 8, 2026, completing her sixth wing walking stunt in Gloucestershire, England, and extending her Guinness World Record as the world's oldest female wing walker. The feat, confirmed in verified world-news reporting, was not a ceremonial gesture or honorary title — it was a completed aerial performance, executed at altitude, by a woman who has now done it six times.",
+        "Wing walking, for the uninitiated, is exactly what it sounds like: standing atop the wing of a moving biplane in open air, requiring sustained grip strength, balance, and the physical and psychological endurance to withstand cold-air exposure and wind forces at speed. It sits at an unusual crossroads between aviation discipline and athletic performance, and that intersection is precisely what makes this record so difficult to categorize — and so impossible to dismiss.",
+        "The debate among analysts centers on whether a record organized around longevity-to-attempt constitutes genuine sports achievement or a well-documented spectacle. Most voices land somewhere in the middle. The historical parallel to figures like Evel Knievel — daredevils whose physical skill was undeniable even as their context was theatrical — surfaces repeatedly as a reference point. The Guinness validation adds institutional weight, but it does not resolve the underlying tension between performance sport and showmanship.",
+        "What the record does unambiguously demonstrate is that the woman has completed this stunt not once, not twice, but six times, the most recent at age 97. Repeated execution across years speaks to something more than novelty. Whether governing bodies of sport choose to recognize it formally or not, the physical demands of the discipline — balance, cold endurance, coordination at altitude — are not manufactured for optics. They are real, and they were met again on a summer day in Gloucestershire.",
+        "The broader implication, noted by several analysts, is that aging-threshold records like this one are quietly redrawing the boundaries of what counts as athletic achievement. As the population of people attempting high-skill, high-risk performances at advanced ages grows, sports classification bodies face increasing pressure to establish clearer criteria. For now, this 97-year-old has done what few people of any age would attempt — and she has done it six times."
       ],
       "sources": [
-        "Anewz",
-        "AA"
+        "AA",
+        "Anewz"
       ],
       "takes": [
         {
           "modelId": "claude",
-          "stance": "Moderate disruption likely; scale depends on track shift",
+          "stance": "Longevity-gated performance blurs sport and spectacle meaningfully",
           "position": 0.3,
-          "text": "Okinawa's role as a regional training and competition hub means even a moderate storm creates disproportionate logistical friction — flight cancellations cascade into athlete no-shows and venue staffing gaps before any match is formally suspended. The 50,000-building power outage already signals infrastructure stress that venue operators cannot ignore. However, no confirmed event cancellations exist yet, and typhoons tracking northeast through the Ryukyus historically clear quickly, limiting the disruption window to 24-48 hours. The real exposure is Chinese coastal venues, where port and transport shutdowns could strand athletes or equipment in transit for competitions scheduled later in the week."
+          "text": "Wing walking demands genuine physical competence—balance, grip strength, cold-air endurance at altitude—so dismissing it as pure spectacle undersells the athletic substrate. But the record's organizing principle is survival to attempt, not optimized athletic output, which is categorically different from a timed race or judged routine. The second-order implication is that aging-threshold records like this one quietly expand what counts as sports achievement, pressuring governing bodies to clarify criteria before the category becomes unmanageable. Tentatively: it earns a sports-adjacent classification, not full sports standing."
         },
         {
           "modelId": "llama-scout",
-          "stance": "cautiously expect disruptions",
-          "position": 0.2,
-          "text": "At least some sporting events will likely be affected. The storm's impact on Okinawa's infrastructure and transportation already caused flight and power disruptions. The extent of changes to sporting events or travel plans remains uncertain, but island and coastal venues are particularly vulnerable. The situation is still developing."
+          "stance": "sports achievement",
+          "position": 0,
+          "text": "The record involves a completed aerial performance requiring balance, aviation, and endurance skills, indicating a sports-related achievement rather than a pure spectacle record."
         },
         {
           "modelId": "llama-70b",
-          "stance": "Historical precedent suggests disruption",
+          "stance": "Similar to Evel Knievel",
           "position": 0.5,
-          "text": "Typhoons in Japan have historically caused significant disruptions to sporting events, such as the 2019 Typhoon Hagibis, which forced the cancellation of several Rugby World Cup matches. Similarly, in 2018, Typhoon Jebi disrupted the Asian Games. Given Okinawa's frequent hosting of regional competitions, it's likely that some events will be rescheduled or cancelled if the storm track worsens. The impact will depend on the storm's intensity and the affected venues' infrastructure."
+          "text": "Wing walking combines physical skill and endurance, akin to historical daredevils like Evel Knievel. This record, while spectacle-driven, demonstrates athleticism and merits consideration as a sports achievement. The Guinness World Record validation adds credibility to its sporting aspect. It blurs the line between sport and spectacle."
         },
         {
           "modelId": "qwen",
-          "stance": "High risk to logistics",
-          "position": 0.7,
-          "text": "Typhoon Dolphin’s path threatens Okinawa’s role as a regional sports hub, with power outages and transport halts already disrupting operations. With ports closed in China and flights canceled, athlete movements and venue access are increasingly compromised. Even without canceled events yet, the storm’s trajectory suggests schedule adjustments are imminent. Capital and supply chains point to escalating operational friction."
+          "stance": "Spectacle with athletic integrity",
+          "position": 0.6,
+          "text": "Wing walking demands precise physical coordination and nerve under extreme conditions, qualifying it as a performance sport. The 97-year-old's repeated execution demonstrates sustained athletic endurance within a niche discipline. While visually spectacular, the skill and risk align it with recognized air sports. Longevity records in high-risk stunts reflect both showmanship and measurable physical achievement."
         },
         {
           "modelId": "kimi",
-          "stance": "Storm impact overstated for sports",
+          "stance": "Spectacle, not sport",
           "position": -0.7,
-          "text": "Zero confirmed sports disruptions exist despite exhaustive search. The 'operational impact' framing is speculative padding—50,000 buildings without power in Okinawa is severe for residents, not for athletes who travel on chartered transport with contingency budgets. China's port closures are routine precaution, not sports-specific. This story weaponizes weather drama to manufacture relevance where none is verified."
+          "text": "Wing walking records measure survival and spectacle, not athletic competition against peers. Guinness longevity stunts require no standardized rules, no direct opponents, and no skill progression—just a plane and a waiver. Calling this 'sports-adjacent' dilutes the definition of sport into mere novelty endurance."
         },
         {
           "modelId": "gpt-oss",
-          "stance": "significant disruptions expected",
-          "position": 1,
-          "text": "If the typhoon track worsens, at least a dozen events and dozens of athlete travel plans will be forced to change. Past Okinawa storms shifted 10‑15% of competitions and 20‑30% of itineraries, suggesting similar scale now."
+          "stance": "Counts as a sport achievement",
+          "position": 0.8,
+          "text": "Wing walking requires balance, aviation knowledge, physical endurance, and precise timing—attributes common to recognized sports. The Guinness record validates it as a measurable competitive performance, not merely a one‑off spectacle. Therefore, the longevity record should be classified alongside other athletic achievements."
         }
       ],
-      "consensus": "The panel broadly agrees that Okinawa's transportation and infrastructure disruptions create meaningful operational risk for competitions and athlete movement in the region, even without confirmed event cancellations yet. The historian and field reporting beats converge on the likelihood of formal schedule changes emerging within the next 24 to 48 hours, particularly if the storm track worsens or Chinese coastal disruptions persist into the competition week.",
+      "consensus": "The panel broadly agrees that wing walking occupies a legitimate sports-adjacent space, with its physical demands — balance, endurance, and coordination under extreme conditions — providing a credible athletic substrate even if the record's organizing principle is longevity rather than competitive output against peers. Most voices converge on a classification somewhere between recognized sport and high-skill spectacle, with Guinness validation lending measurable credibility to the achievement. The woman's sixth completed performance at age 97 is treated across the panel as a genuine athletic feat, regardless of where the formal classification eventually lands.",
       "outlierModelId": "kimi",
-      "outlierNote": "Kimi K2 stands apart by arguing that the absence of any confirmed sports disruption makes the operational-impact framing speculative rather than newsworthy, contending that professional athletes travel on chartered transport with contingency budgets that insulate them from the residential-scale power and flight disruptions reported so far. This position deserves scrutiny because it correctly identifies the evidentiary gap but discounts the documented cascade mechanics — flight network cancellations and port closures — that affect chartered and commercial travel alike.",
-      "divergence": 0.85
+      "outlierNote": "Kimi K2 stands apart by rejecting the sports-adjacent framing entirely, arguing that the absence of standardized rules, peer competition, and skill progression disqualifies wing walking records from any sporting classification — reducing them to survival endurance and novelty. This position is the only one on the panel that draws a hard categorical line rather than engaging with the spectrum between sport and spectacle.",
+      "divergence": 0.75
     }
   ],
-  "ticker": null
+  "ticker": [
+    {
+      "label": "S&P 500",
+      "value": "S&P 500",
+      "change": 0
+    }
+  ]
 };

@@ -301,7 +301,10 @@ export const CURRENT_ISSUE = ISSUES[0];
 function sanitizeTicker(items: TickerItem[] | null): TickerItem[] {
   if (!items) return [];
   return items.filter(
-    (t) => /\d/.test(t.value) && t.value.length <= 14 && Number.isFinite(t.change)
+    (t) =>
+      /^[$€£]?\d[\d,]*(\.\d+)?%?$/.test(String(t.value).trim()) &&
+      String(t.value).length <= 14 &&
+      Number.isFinite(t.change)
   );
 }
 
