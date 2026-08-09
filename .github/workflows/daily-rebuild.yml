@@ -1,0 +1,24 @@
+# Daily rebuild: after the Supabase pipeline generates and publishes the
+# morning issue (4:15-4:45 AM PT), this pushes an empty commit so Vercel's
+# git integration rebuilds the site — the prebuild step pulls the fresh
+# content from Supabase. No credentials leave GitHub.
+name: daily-rebuild
+on:
+  schedule:
+    - cron: "50 11 * * *" # 4:50 AM PT (PDT; 3:50 AM in winter)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Trigger Vercel rebuild via empty commit
+        run: |
+          git config user.name "narrativeNews pipeline"
+          git config user.email "pipeline@narrativenews.dev"
+          git commit --allow-empty -m "chore: daily rebuild $(date -u +%F)"
+          git push
