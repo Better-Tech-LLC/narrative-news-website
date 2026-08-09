@@ -37,9 +37,10 @@ export async function subscribe(
     };
   }
 
-  const { error } = await supabase
-    .from("nn_subscribers")
-    .upsert({ email, topics, subscribed_at: new Date().toISOString() }, { onConflict: "email" });
+  const { error } = await supabase.rpc("nn_subscribe", {
+    p_email: email,
+    p_topics: topics,
+  });
 
   if (error) {
     console.error("[newsletter] subscribe failed:", error.message);

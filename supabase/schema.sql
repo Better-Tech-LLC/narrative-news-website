@@ -1,6 +1,5 @@
 -- narrativeAI.dev — Supabase schema
--- Tables prefixed nn_ (Better Tech convention for the shared project).
--- Apply via Supabase MCP or SQL editor when wiring the backend.
+-- Dedicated project: narrative-news (gbthuftvbbdtettsynue).
 
 create table if not exists nn_subscribers (
   id uuid primary key default gen_random_uuid(),
@@ -58,4 +57,29 @@ create policy "public read stories" on nn_stories
   for select using (true);
 create policy "public read takes" on nn_takes
   for select using (true);
--- nn_subscribers: no public policies — service role only (server actions).
+-- nn_subscribers: no table-level public policies. Writes go through the
+-- SECURITY DEFINER function below, callable with the publishable key.
+
+create or replace function nn_subscribe(p_email text, p_topics text[])
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if p_email !~ '^[^\s@]+@[^\s@]+\.[^\s@]+$' then
+    raise exception 'invalid email';
+  end if;
+  if array_length(p_topics, 1) is null or array_length(p_topics, 1) > 10 then
+    raise exception 'invalid topics';
+  end if;
+  insert into nn_subscribers (email, topics)
+  values (lower(p_email), p_topics)
+  on conflict (email) do update
+    set topics = excluded.topics,
+        unsubscribed_at = null;
+end;
+$$;
+
+revoke all on function nn_subscribe(text, text[]) from public;
+grant execute on function nn_subscribe(text, text[]) to anon;
