@@ -53,6 +53,21 @@ export default function RootLayout({
         <Ticker />
         <main>{children}</main>
         <Footer />
+        {/* Google Analytics (gtag.js) — plain tags so the snippet is present in
+            the server-rendered HTML, where Google's tag detector looks for it. */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-8X0JJRHHQX"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "window.dataLayer = window.dataLayer || [];" +
+              "function gtag(){dataLayer.push(arguments);}" +
+              "gtag('js', new Date());" +
+              "gtag('config', 'G-8X0JJRHHQX');",
+          }}
+        />
       </body>
     </html>
   );
