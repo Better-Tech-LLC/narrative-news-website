@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   title: "narrativeNews.dev — Six models. One briefing.",
   description:
     "Daily news analyzed by a panel of six AI models. Every perspective attributed. Where the panel diverges is the story.",
+  other: {
+    "google-adsense-account": "ca-pub-7943673613137326",
+  },
 };
 
 export default function RootLayout({
